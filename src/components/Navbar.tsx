@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion } from "motion/react"
 
 interface NavLink {
     label: string;
@@ -64,6 +65,14 @@ export default function Navbar() {
                   href={link.href}
                   className={"text-sm font-semibold tracking-wide uppercase transition-colors duration-200 "}
                 >
+                  {link.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeNavLine"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-yellow-bright"
+                      transition={{ type: "spring", stiffness: 300, damping: 30}}
+                    />
+                  )}
                 </a>
               )
             })}
