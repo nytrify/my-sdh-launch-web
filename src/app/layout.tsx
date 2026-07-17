@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "MySDH Launch",
+  description: "MySDH Application Launch",
+  keywords: ["SDH", "True Knowledge", "Faith in Christ", "Godly Character", "Sekolah Diah Harapan"],
+  authors: [{ name: "Edutech SDH" }],
 };
 
 export default function RootLayout({

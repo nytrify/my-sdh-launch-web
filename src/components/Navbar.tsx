@@ -10,10 +10,9 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-    { label: "Home", href:"#home"},
-    { label: "Guide", href:"#guide"},
-    { label: "Download", href:"#download"},
-    { label: "FAQ", href:"#faq"}
+    { label: "Home", href:"#banner"},
+    { label: "Parents Guide", href:"#pguide"},
+    { label: "Teachers Guide", href:"#hguide"},
 ]
 
 export default function Navbar() {
@@ -42,7 +41,7 @@ export default function Navbar() {
   }, [])
   return (
     <>
-      <header className={"fixed top-0 left-0 right-0 z-50 bg-[#FFFFED] py-5"}>
+      <header className={"fixed top-0 left-0 right-0 z-50 bg-[#FFFFED] inset-shadow-black py-5 backdrop-blur-md shadow-lg/20"}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <a href="#home" className="flex items-center group">
             <Image
@@ -76,6 +75,14 @@ export default function Navbar() {
                 </a>
               )
             })}
+            
+          <a
+            href=""
+            className="rounded-full  bg-[#15396B] px-6 py-3 font-semibold uppercase font-medium text-white transition hover:bg-[#2F78D8]"
+          >
+            Download
+          </a>
+
           </nav>
         </div>
       </header>
