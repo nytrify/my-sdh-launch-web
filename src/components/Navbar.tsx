@@ -63,7 +63,7 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className={"text-sm font-semibold tracking-wide uppercase transition-colors duration-200 "}
+                  className={`text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${isActive ? "text-[#2F78D8]" : "text-[#15396B] hover:text-[#2F78D8]"}`}
                 >
                   {link.label}
                   {isActive && (
