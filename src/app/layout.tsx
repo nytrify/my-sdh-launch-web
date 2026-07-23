@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from 'next/font/google'
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +12,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'], // pick the weights you actually use
+  variable: '--font-montserrat', // exposes it as a CSS variable
+})
 
 export const metadata: Metadata = {
   title: "MySDH Launch",
@@ -27,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={montserrat.variable}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

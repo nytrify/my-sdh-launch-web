@@ -1,6 +1,9 @@
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
+import Guide from "@/components/Guide";
+import Download from "@/components/Download";
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -9,6 +12,9 @@ export default function Home() {
       
       <main className="flex-grow">
         <Banner />
+        <Guide />
+        <Download />
+        <Footer />
       </main>
     </>
     

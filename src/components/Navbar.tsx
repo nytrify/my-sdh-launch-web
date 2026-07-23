@@ -1,44 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { motion } from "motion/react"
-
-interface NavLink {
-    label: string;
-    href: string;
-}
-
-const navLinks: NavLink[] = [
-    { label: "Home", href:"#banner"},
-    { label: "Parents Guide", href:"#pguide"},
-    { label: "Teachers Guide", href:"#hguide"},
-]
+import Link from "next/link";
+import DownloadLink from "./DownloadLink";
+import { useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+  const pathname = usePathname()
 
-      const scrollPosition = window.scrollY + 100;
-      for(const link of navLinks){
-        const id = link.href.substring(1);
-        const el = document.getElementById(id);
-        if(el){
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if(scrollPosition >= top && scrollPosition < top + height){
-            setActiveSection(id);
-          }
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [])
+  const handleClick = (e: React.MouseEvent) => {
+    if (pathname === '/') {
+      e.preventDefault()
+      document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })
+    }
+    // if not on '/', let the Link navigate normally — Next handles the hash on arrival
+  }
+
   return (
     <>
       <header className={"fixed top-0 left-0 right-0 z-50 bg-[#FFFFED] inset-shadow-black py-5 backdrop-blur-md shadow-lg/20"}>
@@ -55,36 +37,72 @@ export default function Navbar() {
 
           {/* Desktop Navbar Links*/}
           <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => {
-              const id = link.href.substring(1);
-              const isActive = activeSection === id;
-              return (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className={`text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${isActive ? "text-[#2F78D8]" : "text-[#15396B] hover:text-[#2F78D8]"}`}
-                >
-                  {link.label}
-                  {isActive && (
-                    <motion.span
-                      layoutId="activeNavLine"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-yellow-bright"
-                      transition={{ type: "spring", stiffness: 300, damping: 30}}
-                    />
-                  )}
-                </a>
-              )
-            })}
-            
-          <a
-            href=""
-            className="rounded-full  bg-[#15396B] px-6 py-3 font-semibold uppercase font-medium text-white transition hover:bg-[#2F78D8]"
-          >
-            Download
-          </a>
-
+            <a
+              key="Home"
+              href="/"
+              className="text-sm font-semibold font-sans tracking-wide uppercase transition-colors duration-200 text-[#15396B] hover:text-[#2F78D8]"
+            >
+              Home
+            </a>
+            <Link 
+              href="/parent-guide" 
+              className="text-sm font-semibold font-sans tracking-wide uppercase transition-colors duration-200 text-[#15396B] hover:text-[#2F78D8]">
+                Parent Guide
+            </Link>
+            <Link 
+              href="/teacher-guide" 
+              className="text-sm font-semibold font-sans tracking-wide uppercase transition-colors duration-200 text-[#15396B] hover:text-[#2F78D8]">
+                Teacher Guide
+            </Link>
+            <DownloadLink />
           </nav>
+
+           {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-brand-blue-dark hover:text-brand-blue transition-colors focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            {isOpen ? <X className="w-6 h-6 text-[#15396B]" /> : <Menu className="w-6 h-6 text-[#15396B]" />}
+          </button>
         </div>
+
+        {/* Mobile Menu Panel */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden bg-[#F8F8F6]/95 backdrop-blur-lg border-b border-brand-blue-light/10 overflow-hidden"
+            >
+              <div className="px-6 py-8 flex flex-col space-y-6 bg-[#FFFFED]">
+                <a
+                  key="Home"
+                  href="/"
+                  className="text-sm font-semibold font-sans tracking-wide uppercase transition-colors duration-200 text-[#15396B] hover:text-[#2F78D8]"
+                >
+                  Home
+                </a>
+                <Link 
+                  href="/parent-guide" 
+                  className="text-sm font-semibold font-sans tracking-wide uppercase transition-colors duration-200 text-[#15396B] hover:text-[#2F78D8]">
+                    Parent Guide
+                </Link>
+                <Link 
+                  href="/teacher-guide" 
+                  className="text-sm font-semibold font-sans tracking-wide uppercase transition-colors duration-200 text-[#15396B] hover:text-[#2F78D8]">
+                    Teacher Guide
+                </Link>
+                <Link href="/#download" onClick={handleClick} className="text-[#15396B] font-semibold font-sans uppercase transition">
+                  Download
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
       </header>
     </>
   );
