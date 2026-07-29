@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Montserrat } from 'next/font/google'
+import { Geist, Geist_Mono, Montserrat, Quicksand } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,6 +18,12 @@ const montserrat = Montserrat({
   variable: '--font-montserrat', // exposes it as a CSS variable
 })
 
+const quicksand = Quicksand({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-quicksand',
+})
+
 export const metadata: Metadata = {
   title: "MySDH Launch",
   description: "MySDH Application Launch",
@@ -34,9 +39,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={montserrat.variable}
+      className={quicksand.variable}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className={quicksand.variable}>{children}</body>
     </html>
   );
 }

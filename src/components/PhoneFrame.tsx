@@ -9,7 +9,7 @@ export default function PhoneFrame({
   alt: string
 }) {
   return (
-    <div className="relative mx-auto w-[280px] h-[500px] rounded-[2.5rem] bg-neutral-900 p-3 shadow-2xl">
+    <div className="relative mx-auto w-[240px] h-[480px] rounded-[2.5rem] bg-neutral-900 p-3 shadow-2xl">
       {/* notch */}
       <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-5 bg-neutral-900 rounded-b-2xl z-20" />
 

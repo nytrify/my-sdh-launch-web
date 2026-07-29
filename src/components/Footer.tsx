@@ -8,7 +8,7 @@ import { IoMdMail } from "react-icons/io";
 export default function Footer() {
   return (
     <footer className="bg-[#0B2354] text-white">
-      <div className="w-full mx-auto px-6 py-16">
+      <div className="w-1/2 mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row gap-12 md:gap-24">
           <div>
             <h3 className="font-bold text-sm tracking-wide mb-4">HEAD OFFICE</h3>
@@ -18,7 +18,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
+          <div className="w-1/2 mx-auto px-6">
             <h3 className="font-bold text-sm tracking-wide mb-4">CONTACT US</h3>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm">

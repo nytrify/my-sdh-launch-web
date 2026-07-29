@@ -26,7 +26,7 @@ const teacherFAQs: FAQItem[] = [
 export default function FAQ(){
     return(
         <>
-            <section className="justify-center items-center w-full bg-white flex py-6">
+            <section className="justify-center items-center w-full bg-[#dde4ed] flex py-6">
               <div className="flex text-black z-10">
                 <div className="flex-col w-full mt-12">
                     <h1 className="text-5xl font-bold md:text-4xl font-sans text-center">Frequently Asked Questions</h1>

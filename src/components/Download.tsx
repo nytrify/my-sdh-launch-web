@@ -57,7 +57,7 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
 export default function Download(){
     return(
         <>
-            <section id="download" className="scroll-mt-20 justify-center items-center w-full bg-linear-65 from-white to-[#faecd7] flex py-6 flex-col">
+            <section id="download" className="scroll-mt-20 justify-center items-center w-full bg-[#dde4ed] flex py-6 flex-col">
               <div className="flex flex-col items-center justify-center text-center text-black z-10">
                 <h1 className="text-base md:text-3xl font-sans text-[#192553] py-2">Start Using My SDH Today!</h1>
                 <h1 className="text-base md:text-xl font-sans text-[#192553] py-2">Compatible with Android and iOS</h1>
@@ -69,6 +69,7 @@ export default function Download(){
                     <Image src="/googleplay.jpg" alt="Play Store" width={250} height={80}/>
                   </a>
                 </div>
+                
               </div>
               <div className="flex-col flex w-full mt-12 items-center">
                 <div className="flex items-center w-3/4 my-8">

@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={"fixed top-0 left-0 right-0 z-50 bg-[#FFFFED] inset-shadow-black py-5 backdrop-blur-md shadow-lg/20"}>
+      <header className={"fixed top-0 left-0 right-0 z-50 bg-[#FFFFED]/60 inset-shadow-black py-5 backdrop-blur-md shadow-lg/20"}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <a href="#home" className="flex items-center group">
             <Image
@@ -31,7 +31,7 @@ export default function Navbar() {
               alt="SDH Logo"
               width={128}
               height={128}
-              className="mr-3 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
+              className="mr-3 object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </a>
 
