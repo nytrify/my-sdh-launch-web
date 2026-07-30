@@ -57,7 +57,7 @@ export default function Guide() {
                 <p className="max-w-lg pt-4 z-10 font-sans text-white px-8">Education is most effective when schools and families work together. My SDH makes communication simple, meaningful, and accessible—helping everyone stay connected to each student's learning journey. Start exploring the application guide based on your needs.</p>
                 <div className="flex w-full mt-12">
                   <div className="w-1/2 h-64 md:h-96 overflow-hidden group relative">
-                    <Image src="/SDH08624.JPG" alt="Parent Guide" fill className="object-cover" />
+                    <Image src="/SDH08624.jpg" alt="Parent Guide" fill className="object-cover" />
                     <Link href="/parent-guide">
                     <div className="absolute inset-0 bg-[#15396B]/60 group-hover:bg-[#15396B]/90 transition-colors duration-300"/>
                       <div className="absolute inset-0 z-10 flex items-center justify-center">

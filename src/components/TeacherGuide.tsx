@@ -57,13 +57,13 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
     </div>
   )
 }
-
+  
 export default function TeacherGuide(){
     return(
         <>
           <section className="relative min-h-screen w-full">
               <div className="relative w-full h-screen">
-                <Image src="/DSC09549.JPG" alt="Teacher Guide Banner" fill className="object-cover " />
+                <Image src="/DSC09549.jpg" alt="Teacher Guide Banner" fill className="object-cover " />
 
                 <div className="absolute inset-0 bg-[#0a1a4a]/70" />
 
@@ -213,10 +213,10 @@ export default function TeacherGuide(){
                   <h1 className="text-base md:text-xl font-sans text-[#0a1a4a] py-2">Compatible with Android and iOS</h1>
                   <div className="flex items-center gap-4 py-10">
                     <a href="">
-                      <Image src="/appstore.jpg" alt="App Store" width={250} height={80}/>
+                      <Image src="/appstore1.png" alt="App Store" width={250} height={80}/>
                     </a>
                     <a href="">
-                      <Image src="/googleplay.jpg" alt="Play Store" width={250} height={80}/>
+                      <Image src="/googleplay1.png" alt="Play Store" width={250} height={80}/>
                     </a>
                   </div>
                 </div>
