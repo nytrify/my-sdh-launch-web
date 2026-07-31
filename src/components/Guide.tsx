@@ -2,8 +2,7 @@
 import { useInView } from "@/app/hooks/UseInView";
 import Image from "next/image";
 import Link from "next/link";
-import { Plyr } from "plyr-react";
-import "plyr-react/plyr.css";
+import VideoPlayer from "./VideoPlayer";
 
 function DottedBg(){
   return(
@@ -30,12 +29,7 @@ export default function Guide() {
                 <div className="w-full md:w-1/2 md:h-72 group relative">
                   <div ref={videoRef as React.RefObject<HTMLDivElement>} 
                       className={`flex items-center justify-center gap-4 transition-all duration-1000 ease-out delay-300 ${videoInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <Plyr 
-                      source={{
-                      type: "video",
-                      sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
-                      }}
-                    />
+                    <VideoPlayer src="/sdh-logo-vid.mp4"/>
                   </div>
                 </div>
 

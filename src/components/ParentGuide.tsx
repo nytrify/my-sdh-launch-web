@@ -6,8 +6,7 @@ import { ChevronDown } from 'lucide-react'
 import { useState } from "react";
 import { useInView } from "@/app/hooks/UseInView";
 import TipsSection from "./TipsSection";
-import { Plyr } from "plyr-react";
-import "plyr-react/plyr.css";
+import VideoPlayer from "./VideoPlayer";
 
 type FAQItem = {
   question: string
@@ -84,12 +83,7 @@ export default function ParentGuide(){
               </div>
 
               <div className="relative w-full">
-                <Plyr 
-                  source={{
-                  type: "video",
-                  sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
-                  }}
-                />                
+                <VideoPlayer src="/sdh-logo-vid.mp4"/>
               </div>
               
               <div className="relative flex flex-col items-center justify-center text-center bg-[#1279be] h-max py-15">
@@ -188,12 +182,7 @@ export default function ParentGuide(){
                       <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">Stay one step ahead in your child's learning journey. Agenda gives you a clear view of upcoming classroom activities, school events, and important reminders, helping you prepare, encourage, and support your child every day.</p>
                       <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">Whether it's a classroom activity, an assessment, or a school event, Agenda helps ensure you never miss an important moment.</p>
                       <div className="pt-5">
-                        <Plyr 
-                          source={{
-                            type: "video",
-                            sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
-                          }}
-                        />
+                        <VideoPlayer src="/sdh-logo-vid.mp4"/>
                       </div>
                     </div>
                     <div className="flex-shrink-0 p-10">
@@ -211,12 +200,7 @@ export default function ParentGuide(){
                       <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">Celebrate every learning moment with your child. Student Update allows you to follow classroom experiences through photos and meaningful stories, giving you a closer look at what your child is learning and accomplishing each day.</p>
                       <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">It's more than just pictures—it's a window into your child's growth, creativity, and learning journey at school.</p>
                       <div className="pt-5">
-                        <Plyr 
-                          source={{
-                            type: "video",
-                            sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
-                          }}
-                        />
+                        <VideoPlayer src="/sdh-logo-vid.mp4"/>
                       </div>
                     </div>
                   </div>

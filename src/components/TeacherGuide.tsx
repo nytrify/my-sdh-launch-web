@@ -4,8 +4,7 @@ import { ChevronDown } from "lucide-react";
 import PhoneFrame from "./PhoneFrame";
 import Image from "next/image";
 import { useState } from "react";
-import { Plyr } from "plyr-react";
-import "plyr-react/plyr.css";
+import VideoPlayer from "./VideoPlayer";
 
 type FAQItem = {
   question: string
@@ -82,12 +81,7 @@ export default function TeacherGuide(){
 
               
               <div className="relative w-full">
-                <Plyr 
-                  source={{
-                  type: "video",
-                  sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
-                  }}
-                />     
+                <VideoPlayer src="/sdh-logo-vid.mp4"/>
                 <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
                   <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
                     Getting Started
@@ -141,12 +135,7 @@ export default function TeacherGuide(){
                         <li>Keep information concise and easy to understand.</li>
                       </ul>
                       <div className="pt-5">
-                        <Plyr 
-                          source={{
-                            type: "video",
-                            sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
-                          }}
-                        />
+                        <VideoPlayer src="/sdh-logo-vid.mp4"/>
                       </div>
                     </div>
                     <div className="flex-shrink-0 p-10 md:pb-5">
@@ -171,12 +160,7 @@ export default function TeacherGuide(){
                         <li>Follow school guidelines for student privacy.</li>
                       </ul>                        
                     <div className="pt-5">
-                        <Plyr 
-                          source={{
-                            type: "video",
-                            sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
-                          }}
-                        />
+                        <VideoPlayer src="/sdh-logo-vid.mp4"/>
                       </div>
                     </div>
                   </div>

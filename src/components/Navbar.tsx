@@ -75,9 +75,9 @@ export default function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden bg-[#F8F8F6]/95 backdrop-blur-lg border-b border-brand-blue-light/10 overflow-hidden"
+              className="md:hidden bg-transparent border-b border-brand-blue-light/10 overflow-hidden"
             >
-              <div className="px-6 py-8 flex flex-col space-y-6 bg-[#FFFFED]">
+              <div className="px-6 py-8 flex flex-col space-y-6">
                 <a
                   key="Home"
                   href="/"
