@@ -2,7 +2,20 @@
 import { useInView } from "@/app/hooks/UseInView";
 import Image from "next/image";
 import Link from "next/link";
+import { Plyr } from "plyr-react";
+import "plyr-react/plyr.css";
 
+function DottedBg(){
+  return(
+      <div 
+        className="absolute inset-0 opacity-[0.12]"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 2px, transparent 2px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+  )
+}
 
 export default function Guide() {
 
@@ -17,14 +30,12 @@ export default function Guide() {
                 <div className="w-full md:w-1/2 md:h-72 group relative">
                   <div ref={videoRef as React.RefObject<HTMLDivElement>} 
                       className={`flex items-center justify-center gap-4 transition-all duration-1000 ease-out delay-300 ${videoInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <video 
-                      controls
-                      className="w-3/4 md:w-full max-w-3xl rounded-lg"
-                      muted
-                      loop
-                    >
-                      <source src="/introduction-mysdh-new.mp4" type="video/mp4" />
-                    </video>
+                    <Plyr 
+                      source={{
+                      type: "video",
+                      sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
+                      }}
+                    />
                   </div>
                 </div>
 
@@ -52,6 +63,7 @@ export default function Guide() {
             <section className="relative md:min-h-screen w-full">
               {/* <Image src="/DSC09549.JPG" alt="Main Banner" fill className="object-cover" /> */}
               <div className="inset-0 flex flex-col items-center justify-center text-center bg-[#1279be]">
+                <DottedBg />
                 <h1 className="text-5xl font-bold md:text-7xl z-10 font-sans text-[#192553] p-10">Explore the User's Guide</h1>
                 <h1 className="text-base md:text-3xl z-10 font-sans text-[#192553] px-10">A Better Way To Stay Connected</h1>
                 <p className="max-w-lg pt-4 z-10 font-sans text-white px-8">Education is most effective when schools and families work together. My SDH makes communication simple, meaningful, and accessible—helping everyone stay connected to each student's learning journey. Start exploring the application guide based on your needs.</p>

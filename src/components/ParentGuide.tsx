@@ -5,6 +5,9 @@ import Image from "next/image";
 import { ChevronDown } from 'lucide-react'
 import { useState } from "react";
 import { useInView } from "@/app/hooks/UseInView";
+import TipsSection from "./TipsSection";
+import { Plyr } from "plyr-react";
+import "plyr-react/plyr.css";
 
 type FAQItem = {
   question: string
@@ -61,6 +64,9 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
 }
 
 export default function ParentGuide(){  
+
+    const { ref: headingRef, isInView: headingInView } = useInView();
+    const { ref: textRef, isInView: textInView } = useInView();
     
     return(
         <>
@@ -68,26 +74,54 @@ export default function ParentGuide(){
               <div className="relative w-full h-screen">
                 <Image src="/reading-with-dad.jpg" alt="Parent Guide Banner" fill className="object-cover " />
 
-                <div className="absolute inset-0 bg-[#0a1a4a]/50" />
+                <div className="absolute inset-0 bg-[#0a1a4a]/70" />
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-10">
                   <h1 className="text-5xl font-bold md:text-7xl font-sans text-[#1279be] text-center p-2">Parent Guide</h1>
-                  <h1 className="text-base md:text-4xl text-center font-sans text-[#dde4ed] text-center">Welcome to My SDH for Parents</h1>
-                  <p className="text-base md:text-2xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">My SDH helps parents stay closely connected with their child's learning journey by bringing classroom updates, learning activities, and school communication together in one convenient place. </p>           
+                  <p className="text-base md:text-2xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">Welcome to My SDH, the parent application designed to help you stay connected with your child's learning journey.</p>       
                 </div>
 
-                  <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                    <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
-                      Getting Started
-                    </h2>
+              </div>
+
+              <div className="relative w-full">
+                <Plyr 
+                  source={{
+                  type: "video",
+                  sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
+                  }}
+                />                
+              </div>
+              
+              <div className="relative flex flex-col items-center justify-center text-center bg-[#1279be] h-max py-15">
+                <div className="w-3/4 flex flex-col items-center justify-center">
+                  <div ref={headingRef as React.RefObject<HTMLDivElement>} 
+                      className={`flex items-center gap-4 px-10 py-2 transition-all duration-700 ease-out ${headingInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                    <h1 className="text-base text-lg md:text-4xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">Through this application, you can:</h1>
                   </div>
+                  <div ref={textRef as React.RefObject<HTMLDivElement>} 
+                      className={`flex items-center gap-4 px-10 py-2 text-center md:text-left transition-all duration-700 ease-out delay-150 ${textInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                    <ul className="list-disc md:text-xl pl-6 text-left space-y-2 font-sans text-[#dde4ed] py-4">
+                      <li>Stay informed about daily school activities.</li>
+                      <li>View your child's learning updates.</li>
+                      <li>Monitor upcoming assignments and reminders.</li>
+                      <li>Access your child's profile.</li>
+                      <li>Switch between children if you have more than one enrolled at SDH.</li>
+                    </ul> 
+                  </div>
+
+                </div>
+                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
+                  <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
+                    Getting Started
+                  </h2>
+                </div>
               </div>
 
               <div className="relative flex flex-col items-center justify-center text-center py-15 bg-[image:linear-gradient(180deg,#dde4ed_0%,#dde4ed_25%,#1279be_25%,#1279be_50%,#dde4ed_50%,#dde4ed_75%,#1279be_75%,#1279be_100%)]">          
                 <div className="w-1/2 pb-15">
                   <div className="flex flex-col md:flex-row items-center text-center">
                     <div className="flex-1 text-center md:text-right">
-                      <h1 className="text-base md:text-4xl font-sans font-bold text-[#192553]">Login</h1>
+                      <h1 className="text-base md:text-4xl font-sans font-bold text-[#192553]">Sign in</h1>
                       <p className="text-base py-4 text-[#1279be] font-sans">Sign in using the account provided by your school.</p>
                     </div>
                     <div className="flex-shrink-0 p-10 md:pb-5">
@@ -104,6 +138,14 @@ export default function ParentGuide(){
                     <div className="order-1 md:order-2 flex-1 text-center md:text-left">
                       <h1 className="text-base md:text-4xl font-sans font-bold text-[#192553]">Forgot Password</h1>
                       <p className="text-base py-4 text-[#dde4ed_25] font-sans">Reset your password securely if you are unable to access your account.</p>
+                      <p className="text-base py-4 text-[#dde4ed_25] font-sans hidden md:block">If you cannot remember your password:</p>
+                      <ol className="list-decimal pl-6 text-left space-y-2 font-sans text-[#dde4ed] py-4 hidden md:block">
+                        <li>Tap Forgot Password.</li>
+                        <li>Enter your registered email address.</li>
+                        <li>An OTP verification code will be sent to your registered WhatsApp number.</li>
+                        <li>Enter the OTP. </li>
+                        <li>Create a new password.</li>
+                      </ol> 
                     </div>
                   </div>
                 </div>
@@ -146,14 +188,12 @@ export default function ParentGuide(){
                       <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">Stay one step ahead in your child's learning journey. Agenda gives you a clear view of upcoming classroom activities, school events, and important reminders, helping you prepare, encourage, and support your child every day.</p>
                       <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">Whether it's a classroom activity, an assessment, or a school event, Agenda helps ensure you never miss an important moment.</p>
                       <div className="pt-5">
-                        <video 
-                          controls
-                          className="w-full max-w-3xl rounded-lg"
-                          muted
-                          loop
-                        >
-                          <source src="/sdh-logo-vid.mp4" type="video/mp4" />
-                        </video>
+                        <Plyr 
+                          source={{
+                            type: "video",
+                            sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
+                          }}
+                        />
                       </div>
                     </div>
                     <div className="flex-shrink-0 p-10">
@@ -171,62 +211,20 @@ export default function ParentGuide(){
                       <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">Celebrate every learning moment with your child. Student Update allows you to follow classroom experiences through photos and meaningful stories, giving you a closer look at what your child is learning and accomplishing each day.</p>
                       <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">It's more than just pictures—it's a window into your child's growth, creativity, and learning journey at school.</p>
                       <div className="pt-5">
-                        <video 
-                          controls
-                          className="w-full max-w-3xl rounded-lg"
-                          muted
-                          loop
-                        >
-                          <source src="/sdh-logo-vid.mp4" type="video/mp4" />
-                        </video>
+                        <Plyr 
+                          source={{
+                            type: "video",
+                            sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              {/* <div className="inset-0 flex flex-col items-center justify-center text-center text-black">
-                <div className="flex w-3/4 mt-12">
-                  <div className="w-1/2">
-                    <h1 className="text-base md:text-3xl text-center font-sans text-[#192553]">Agenda</h1>
-                    <p className="text-base pt-4 font-sans text-left text-[#1279be]">Celebrate every learning moment with your child. Student Update allows you to follow classroom experiences through photos and meaningful stories, giving you a closer look at what your child is learning and accomplishing each day.</p>
-                    <p className="text-base pt-4 font-sans text-left text-[#1279be]">Whether it's a classroom activity, an assessment, or a school event, Agenda helps ensure you never miss an important moment.</p>
-                    <div className="pt-5">
-                      <video 
-                        controls
-                        className="w-full max-w-3xl rounded-lg"
-                        muted
-                        loop
-                      >
-                        <source src="/sdh-logo-vid.mp4" type="video/mp4" />
-                      </video>
-                    </div>
-                  </div>
-                  <div className="w-1/2 pt-5">
-                    <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
-                  </div>
-                </div>
-                <div className="flex w-3/4 mt-12">
-                  <div className="w-1/2 pt-5">
-                    <PhoneFrame src="/SDH01384.JPG" alt="Student Update Screen"/>
-                  </div>
-                  <div className="w-1/2 overflow-hidden">
-                    <h1 className="text-base md:text-3xl text-center font-sans text-[#192553]">Student Update </h1>
-                    <p className="text-base pt-4 font-sans text-left text-[#1279be]">Celebrate every learning moment with your child. Student Update allows you to follow classroom experiences through photos and meaningful stories, giving you a closer look at what your child is learning and accomplishing each day.</p>
-                    <p className="text-base pt-4 font-sans text-left text-[#1279be]">It's more than just pictures—it's a window into your child's growth, creativity, and learning journey at school.</p>
-                    <div className="pt-5">
-                      <video 
-                        controls
-                        className="w-full max-w-3xl rounded-lg"
-                        muted
-                        loop
-                      >
-                        <source src="/sdh-logo-vid.mp4" type="video/mp4" />
-                      </video>
-                    </div>
-                  </div>
-                </div>   
-                <div className="w-3/4 h-px bg-black my-8"></div>                           
-              </div> */}
+
+              <TipsSection />
+
               <div className="relative flex flex-col items-center justify-center text-center text-black bg-[#1279be] py-15">
                 <div className="flex flex-col items-center justify-center text-center text-black z-10 w-3/4">
                   <h1 className="text-base md:text-2xl font-sans text-[#0a1a4a] py-2">Download My SDH today and stay informed about your child's learning journey, classroom activities, and important school updates—all in one place.</h1>

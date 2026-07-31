@@ -4,6 +4,8 @@ import { ChevronDown } from "lucide-react";
 import PhoneFrame from "./PhoneFrame";
 import Image from "next/image";
 import { useState } from "react";
+import { Plyr } from "plyr-react";
+import "plyr-react/plyr.css";
 
 type FAQItem = {
   question: string
@@ -57,7 +59,7 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
     </div>
   )
 }
-  
+
 export default function TeacherGuide(){
     return(
         <>
@@ -73,48 +75,26 @@ export default function TeacherGuide(){
                   <p className="text-base md:text-2xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">My SDH enables teachers to communicate learning experiences with parents through simple and meaningful updates. </p>           
                 </div>
 
-                  <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                    <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
-                      Getting Started
-                    </h2>
-                  </div>
+                
+
+
               </div>
-              {/* <div className="relative flex flex-col items-center justify-center bg-[#dde4ed]">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-3/4 mt-12">
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="flex-1 text-center md:text-left px-5">
-                      <h1 className="text-base md:text-3xl font-sans text-[#192553]">Login</h1>
-                      <p className="text-base py-4 text-[#1279be] font-sans">Access My SDH using your school account.</p>
-                    </div>
-                    <div className="flex-shrink-0 px-5">
-                      <PhoneFrame src="/SDH01384.JPG" alt="Login Screen"/>
-                    </div>
-                  </div>
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="flex-shrink-0 px-5 order-2 md:order-1">
-                      <PhoneFrame src="/SDH01384.JPG" alt="Dashboard Screen" />
-                    </div>
-                    <div className="flex-1 text-center md:text-left px-5 order-1 md:order-2">
-                      <h1 className="text-base md:text-3xl text-center md:text-left font-sans text-[#192553]">Dashboard</h1>
-                      <p className="text-base pt-4 font-sans text-[#1279be] py-4">Manage your classroom information from one dashboard. </p>
-                    </div>
-                  </div>
-                </div>  
-                <div className="flex flex-col items-center text-center p-10">
-                  <div className="flex-1 text-center justify-center md:text-left px-5">
-                    <h1 className="text-base md:text-3xl font-sans text-[#192553] text-center">Navigation</h1>
-                    <p className="text-base pt-4 font-sans text-[#1279be] py-4 text-center md:text-right">Learn where to find each feature. </p>    
-                  </div>  
-                  <div className="flex-shrink-0 px-5">
-                    <PhoneFrame src="/SDH01384.JPG" alt="Navigation Screen" />
-                  </div>             
-                </div>              
+
+              
+              <div className="relative w-full">
+                <Plyr 
+                  source={{
+                  type: "video",
+                  sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
+                  }}
+                />     
                 <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                  <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-sans bg-white px-4 py-1 rounded-lg shadow">
-                    Teacher Features
+                  <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
+                    Getting Started
                   </h2>
-                </div>  
-              </div> */}
+                </div>           
+              </div>
+
               <div className="relative flex flex-col items-center justify-center text-center py-15 bg-[image:linear-gradient(180deg,#dde4ed_0%,#dde4ed_50%,#1279be_50%)]">          
                 <div className="w-1/2 pb-15">
                   <div className="flex flex-col md:flex-row items-center text-center">
@@ -161,14 +141,12 @@ export default function TeacherGuide(){
                         <li>Keep information concise and easy to understand.</li>
                       </ul>
                       <div className="pt-5">
-                        <video 
-                          controls
-                          className="w-full max-w-3xl rounded-lg"
-                          muted
-                          loop
-                        >
-                          <source src="/sdh-logo-vid.mp4" type="video/mp4" />
-                        </video>
+                        <Plyr 
+                          source={{
+                            type: "video",
+                            sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
+                          }}
+                        />
                       </div>
                     </div>
                     <div className="flex-shrink-0 p-10 md:pb-5">
@@ -193,14 +171,12 @@ export default function TeacherGuide(){
                         <li>Follow school guidelines for student privacy.</li>
                       </ul>                        
                     <div className="pt-5">
-                        <video 
-                          controls
-                          className="w-full max-w-3xl rounded-lg"
-                          muted
-                          loop
-                        >
-                          <source src="/sdh-logo-vid.mp4" type="video/mp4" />
-                        </video>
+                        <Plyr 
+                          source={{
+                            type: "video",
+                            sources: [{src: "/sdh-logo-vid.mp4", type: "video/mp4"}],
+                          }}
+                        />
                       </div>
                     </div>
                   </div>

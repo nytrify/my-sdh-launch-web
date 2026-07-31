@@ -4,7 +4,34 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import DownloadLink from "./DownloadLink";
+
+function BackgroundDecor() {
+  return (
+    <div className="absolute inset-0 pointer-events-none">
+      {/* base texture */}
+      <div 
+        className="absolute inset-0 opacity-[0.12]"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.4) 2px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+      
+      {/* glow blobs */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 -right-40 w-[500px] h-[500px] bg-cyan-400/10 rounded-full blur-3xl" />
+      
+      {/* outline rings for detail */}
+      <div className="absolute top-16 right-1/3 w-32 h-32 border border-white/10 rounded-full" />
+      <div className="absolute bottom-24 left-20 w-20 h-20 border border-white/10 rounded-full" />
+      
+      {/* accent line */}
+      <svg className="absolute bottom-0 left-0 w-2/3 opacity-10" viewBox="0 0 800 200" preserveAspectRatio="none">
+        <path d="M 0 150 Q 200 50 400 100 Q 600 150 800 50" stroke="#22D3EE" strokeWidth="1" fill="none" />
+      </svg>
+    </div>
+  )
+}
 
 export default function Banner(){
   const pathname = usePathname()
@@ -16,49 +43,14 @@ export default function Banner(){
     }
     // if not on '/', let the Link navigate normally — Next handles the hash on arrival
   }
+
+  
     return (
         <>
           <motion.div>
-            {/* <section className="relative h-screen w-full">
-              
-
-              <div className="absolute inset-0 bg-[#192553]" />
-
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-10">
-                <div className="flex flex-row md:flex-column w-full mt-12">
-                  <div className="w-1/2 h-64 md:h-128 overflow-hidden group relative">
-                    <h1 className="text-5xl font-bold md:text-7xl font-sans text-left pb-4">My SDH</h1>
-                    <p className="text-base max-w-lg text-xl font-sans pt-4 text-left">My SDH brings parent and teachers together through one connected platform. Access daily learning information, share classroom experiences, and strengthen the partnership that supports every student's growth.</p>
-                  </div>
-                  <div className="w-1/2 h-64 md:h-128 overflow-hidden group relative">
-                    <Image src="/banner-model.png" alt="Main Banner" fill className="object-cover" />
-                  </div>
-                </div>
-              </div>
-                
-            </section> */}
-
-            {/* <section className="relative min-h-screen md:h-screen w-full bg-[#0a1a4a] overflow-hidden pt-16">
-              <div className="flex flex-col md:block h-full">
-                <div className="relative md:absolute md:inset-0 flex flex-col justify-center text-white z-10 p-10 sm:pt-20 md:pt-10 md:pr-[45%]">
-                  <h1 className="text-5xl font-bold md:text-7xl font-sans text-center md:text-left pb-4">My SDH</h1>
-                  <p className="text-base max-w-lg text-xl font-sans pt-4 text-center md:text-left">
-                    My SDH brings parent and teachers together through one connected platform. Access daily learning information, share classroom experiences, and strengthen the partnership that supports every student's growth.
-                  </p>
-                </div>
-
-                <div className="relative w-full aspect-[16/15] md:aspect-auto md:absolute md:bottom-0 md:right-0 md:w-1/2 md:h-[95%] z-10">
-                  <Image
-                    src="/banner-model.png"
-                    alt="Main Banner"
-                    fill
-                    className="object-cover object-bottom"
-                  />
-                </div>
-              </div>
-            </section> */}
             <section className="relative w-full bg-[#0a1a4a] h-[900px] sm:h-[1000px] md:h-[700px] lg:h-[800px] flex items-center z-10 overflow-hidden pt-35 md:pt-2">
               <div className="max-w-7xl w-full mx-auto px-6 md:px-10">
+                <BackgroundDecor />
                 <div className="grid md:grid-cols-2 items-center">
 
                   <div className="relative z-10 text-[#dde4ed] pt-15 md:pt-0">
