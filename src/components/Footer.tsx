@@ -18,7 +18,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="w-1/2 mx-auto px-6">
+          <div>
             <h3 className="font-bold text-sm tracking-wide mb-4">CONTACT US</h3>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm">

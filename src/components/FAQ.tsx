@@ -9,7 +9,7 @@ type FAQItem = {
 }
 
 const parentFAQs: FAQItem[] = [
-  { question: 'How do I log in to My SDH?', answer: 'Use the username and password provided by your school. Open the My SDH app, enter your account details, and tap Sign In. If you have not received your account, please contact your child\'s school.' },
+  { question: 'How do I log in to MySDH?', answer: 'Use the username and password provided by your school. Open the MySDH app, enter your account details, and tap Sign In. If you have not received your account, please contact your child\'s school.' },
   { question: 'I forgot my password. What should I do?', answer: 'Tap Forgot Password on the login page and follow the instructions to reset your password. If you are unable to reset it, please contact your school\'s administrator for assistance.' },
   { question: 'Why can\'t I see the Agenda?', answer: 'The Agenda becomes visible once your child\'s teacher publishes it for the term. Check back after the school day begins.' },
   { question: 'Why is Student Update not available?', answer: 'Student Updates are posted by teachers periodically, not on a fixed schedule. You\'ll be notified when a new one is published.' },

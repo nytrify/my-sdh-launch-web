@@ -55,13 +55,13 @@ export default function Banner(){
 
                   <div className="relative z-10 text-[#dde4ed] pt-15 md:pt-0">
                     <h1 className="font-sans font-bold text-5xl md:text-4xl pb-4 text-center md:text-left">
-                      My SDH
+                      MySDH
                     </h1>
                     <h1 className="font-sans font-bold text-5xl md:text-6xl pb-4 text-center md:text-left text-[#dde4ed]">
                       One Connected Experience for School and Home 
                     </h1>
                     {/* <p className="font-sans text-base md:text-xl pb-4 text-center md:text-left text-white">
-                      My SDH brings parents and teachers together through one connected platform. Access daily learning information, share classroom experiences, and strengthen the partnership that supports every student's growth.
+                      MySDH brings parents and teachers together through one connected platform. Access daily learning information, share classroom experiences, and strengthen the partnership that supports every student's growth.
                     </p> */}
                     <h1 className="font-sans font-bold text-base pb-4 md:text-4xl text-center md:text-left text-[#1279be]">
                       Stay Connected. Stay Informed. Grow Together.
@@ -72,12 +72,11 @@ export default function Banner(){
                       </Link>
                     </div>
                   </div>
-
                   {/* Image column */}
                   <div className="relative flex justify-center md:justify-end -mb-[100px] md:-mb-16 z-10">
                     <div className="relative w-full sm:max-w-lg md:max-w-xl aspect-[3/4]">
                       <Image
-                        src="/banner-model.png"
+                        src="/banner-model1.png"
                         alt="Main Banner"
                         fill
                         className="object-cover object-top"

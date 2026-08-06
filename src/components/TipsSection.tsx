@@ -29,7 +29,7 @@ export default function TipsSection() {
           </h1>
         ) : (
           <div className="z-10 text-center transition-opacity duration-700 ease-in-out opacity-0 animate-[fadeIn_0.6s_ease-in-out_0.3s_forwards]">
-            <h2 className="text-4xl font-bold font-sans mb-4">To get the most out of My SDH:</h2>
+            <h2 className="text-4xl font-bold font-sans mb-4">To get the most out of MySDH:</h2>
             <ul className="list-disc md:text-xl pl-6 text-left space-y-2 font-sans text-[#dde4ed] py-4">
               <li>Check Today's Student Agenda regularly to stay informed about your child's learning.  </li>
               <li>Review Student Updates to follow your child's learning experiences.</li>
@@ -39,7 +39,7 @@ export default function TipsSection() {
             </ul> 
             <button
               onClick={() => setIsRevealed(false)}
-              className="mt-6 rounded border border-[#dde4ed] px-4 py-2 text-sm hover:bg-[#dde4ed] hover:text-[#0a1a4a] transition"
+              className="mt-6 font-sans rounded border border-[#dde4ed] px-4 py-2 text-sm hover:bg-[#dde4ed] hover:text-[#0a1a4a] transition"
             >
               Back
             </button>

@@ -14,15 +14,37 @@ type FAQItem = {
 }
 
 const parentFAQs: FAQItem[] = [
-  { question: 'How do I log in to My SDH?', answer: 'Use the username and password provided by your school. Open the My SDH app, enter your account details, and tap Sign In. If you have not received your account, please contact your child\'s school.' },
+  { question: 'How do I log in to MySDH?', answer: 'Use the username and password provided by your school. Open the MySDH app, enter your account details, and tap Sign In. If you have not received your account, please contact your child\'s school.' },
   { question: 'I forgot my password. What should I do?', answer: 'Tap Forgot Password on the login page and follow the instructions to reset your password. If you are unable to reset it, please contact your school\'s administrator for assistance.' },
-  { question: 'Can I view more than one child in My SDH?', answer: 'Yes. If you have more than one child enrolled in the school, all linked student accounts can be accessed from the same parent account, provided they have been connected by the school. ' },
-  { question: 'Will I receive notifications?', answer: 'Yes. My SDH can send notifications for new Agenda items, Student Updates, and other important announcements. Make sure notifications are enabled in your device settings. ' },
-  { question: 'Can I access My SDH on different devices?', answer: 'Yes. You may sign in using your account on another supported device. Simply download the app and log in with the same credentials. ' },
-  { question: 'Is my child\'s information secure?', answer: 'Yes. My SDH is designed to protect student information. Only authorized users can access student-related content according to the permissions assigned by the school. '},
+  { question: 'Can I view more than one child in MySDH?', answer: 'Yes. If you have more than one child enrolled in the school, all linked student accounts can be accessed from the same parent account, provided they have been connected by the school. ' },
+  { question: 'Will I receive notifications?', answer: 'Yes. MySDH can send notifications for new Agenda items, Student Updates, and other important announcements. Make sure notifications are enabled in your device settings. ' },
+  { question: 'Can I access MySDH on different devices?', answer: 'Yes. You may sign in using your account on another supported device. Simply download the app and log in with the same credentials. ' },
+  { question: 'Is my child\'s information secure?', answer: 'Yes. MySDH is designed to protect student information. Only authorized users can access student-related content according to the permissions assigned by the school. '},
   { question: 'Why don\'t I see updates every day?', answer: 'Teachers share learning updates based on classroom activities and school schedules. The frequency of updates may vary depending on the learning program and classroom events. ' },
   { question: 'Who should I contact if I need help?', answer: 'Please contact your school\'s administrator or IT support if you experience login issues or need technical assistance.'}
 ]
+
+function BgDecor(){
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* soft glow */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-400/30 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px]" />
+      
+      {/* grid overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.6) 2px, transparent 2px),
+            linear-gradient(90deg, rgba(255,255,255,0.6) 2px, transparent 2px)
+          `,
+          backgroundSize: '48px 48px',
+        }}
+      />
+    </div>
+  )
+}
 
 function FAQAccordion({ items }: { items: FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -37,9 +59,9 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
               onClick={() => setOpenIndex(isOpen ? null : index)}
               className="w-full flex items-center justify-between py-3 text-left font-sans"
             >
-              <span className="text-sm md:text-base text-[#dde4ed]">{item.question}</span>
+              <span className="text-sm md:text-2xl text-[#dde4ed]">{item.question}</span>
               <ChevronDown
-                className={`w-4 h-4 flex-shrink-0 ml-3 transition-transform duration-300 ${
+                className={`w-4 h-4 flex-shrink-0 ml-3 transition-transform duration-300 text-white ${
                   isOpen ? 'rotate-180' : ''
                 }`}
               />
@@ -50,7 +72,7 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="text-sm text-[#bcceeb] font-sans pb-4 pr-6">
+                <p className="text-sm md:text-lg text-[#bcceeb] font-sans pb-4 pr-6">
                   {item.answer}
                 </p>
               </div>
@@ -70,26 +92,23 @@ export default function ParentGuide(){
     return(
         <>
             <section className="relative min-h-screen w-full">
-              <div className="relative w-full h-screen">
-                <Image src="/reading-with-dad.jpg" alt="Parent Guide Banner" fill className="object-cover " />
+              <div className="relative w-full h-[500px]">
+                {/* <Image src="/reading-with-dad.jpg" alt="Parent Guide Banner" fill className="object-cover " /> */}
+                <BgDecor />
 
                 <div className="absolute inset-0 bg-[#0a1a4a]/70" />
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-10">
-                  <h1 className="text-5xl font-bold md:text-7xl font-sans text-[#1279be] text-center p-2">Parent Guide</h1>
-                  <p className="text-base md:text-2xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">Welcome to My SDH, the parent application designed to help you stay connected with your child's learning journey.</p>       
+                  <h1 className="text-5xl font-bold md:text-7xl font-sans text-[#dde4ed] text-center p-2">Parent Guide</h1>
+                  <p className="text-base md:text-2xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">Welcome to MySDH, the parent application designed to help you stay connected with your child's learning journey.</p>       
                 </div>
 
               </div>
 
-              <div className="relative w-full">
-                <VideoPlayer src="/sdh-logo-vid.mp4"/>
-              </div>
-              
               <div className="relative flex flex-col items-center justify-center text-center bg-[#1279be] h-max py-15">
                 <div className="w-3/4 flex flex-col items-center justify-center">
                   <div ref={headingRef as React.RefObject<HTMLDivElement>} 
-                      className={`flex items-center gap-4 px-10 py-2 transition-all duration-700 ease-out ${headingInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                      className={`flex items-center justify-center gap-4 px-10 py-2 transition-all duration-700 ease-out ${headingInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
                     <h1 className="text-base text-lg md:text-4xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">Through this application, you can:</h1>
                   </div>
                   <div ref={textRef as React.RefObject<HTMLDivElement>} 
@@ -111,95 +130,112 @@ export default function ParentGuide(){
                 </div>
               </div>
 
-              <div className="relative flex flex-col items-center justify-center text-center py-15 bg-[image:linear-gradient(180deg,#dde4ed_0%,#dde4ed_25%,#1279be_25%,#1279be_50%,#dde4ed_50%,#dde4ed_75%,#1279be_75%,#1279be_100%)]">          
-                <div className="w-1/2 pb-15">
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="flex-1 text-center md:text-right">
-                      <h1 className="text-base md:text-4xl font-sans font-bold text-[#192553]">Sign in</h1>
-                      <p className="text-base py-4 text-[#1279be] font-sans">Sign in using the account provided by your school.</p>
-                    </div>
-                    <div className="flex-shrink-0 p-10 md:pb-5">
-                      <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
+              <div className="relative flex flex-col items-center justify-center text-center">          
+
+                <div className="flex flex-col items-center justify-center text-center bg-[#dde4ed] px-5 py-12 w-screen">
+                  <div className="w-full max-w-5xl mx-auto">
+                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                      <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">
+                        <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Sign in</h1>
+                        <p className="text-sm md:text-base font-sans text-[#1279be] leading-relaxed">Sign in using the account provided by your school.</p>
+                        <div className="pt-2 w-full">
+                          <VideoPlayer src="/sdh-logo-vid.mp4"/>
+                        </div>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
+                      </div>
                     </div>
                   </div>
-                </div> 
+                </div>                
 
-                <div className="w-1/2 pb-15">
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="order-2 md:order-1 flex-shrink-0 p-10 md:pb-5">
-                      <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
-                    </div>
-                    <div className="order-1 md:order-2 flex-1 text-center md:text-left">
-                      <h1 className="text-base md:text-4xl font-sans font-bold text-[#192553]">Forgot Password</h1>
-                      <p className="text-base py-4 text-[#dde4ed_25] font-sans">Reset your password securely if you are unable to access your account.</p>
-                      <p className="text-base py-4 text-[#dde4ed_25] font-sans hidden md:block">If you cannot remember your password:</p>
-                      <ol className="list-decimal pl-6 text-left space-y-2 font-sans text-[#dde4ed] py-4 hidden md:block">
-                        <li>Tap Forgot Password.</li>
-                        <li>Enter your registered email address.</li>
-                        <li>An OTP verification code will be sent to your registered WhatsApp number.</li>
-                        <li>Enter the OTP. </li>
-                        <li>Create a new password.</li>
-                      </ol> 
+                <div className="flex flex-col items-center justify-center text-center bg-[#1279be] px-5 py-12 w-screen">
+                  <div className="w-full max-w-5xl mx-auto">
+                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                      <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">
+                        <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Forgot Password</h1>
+                        <p className="text-sm md:text-base font-sans text-[#dde4ed] leading-relaxed">Reset your password securely if you are unable to access your account.</p>
+                        <div className="pt-2 w-full">
+                          <VideoPlayer src="/sdh-logo-vid.mp4"/>
+                        </div>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </div>    
 
-                <div className="w-1/2">
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="flex-1 text-center md:text-right">
-                      <h1 className="text-base md:text-4xl font-sans font-bold text-[#192553]">Dashboard</h1>
-                      <p className="text-base py-4 text-[#1279be] font-sans">View all important information from one central dashboard.</p>
-                    </div>
-                    <div className="flex-shrink-0 p-10 md:pb-5">
-                      <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
+                <div className="flex flex-col items-center justify-center text-center bg-[#dde4ed] px-5 py-12 w-screen">
+                  <div className="w-full max-w-5xl mx-auto">
+                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                      <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">
+                        <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Dashboard</h1>
+                        <p className="text-sm md:text-base font-sans text-[#1279be] leading-relaxed">View all important information from one central dashboard.</p>
+                        <div className="pt-2 w-full">
+                          <VideoPlayer src="/sdh-logo-vid.mp4"/>
+                        </div>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
+                      </div>
                     </div>
                   </div>
-                </div>   
+                </div>                
 
-                <div className="w-1/2 mt-12">
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="order-2 md:order-1 flex-shrink-0 p-10 md:pb-5">
-                      <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
-                    </div>
-                    <div className="order-1 md:order-2 flex-1 text-center md:text-left">
-                      <h1 className="text-base md:text-4xl font-sans font-bold text-[#192553]">Navigation</h1>
-                      <p className="text-base py-4 text-[#dde4ed_25] font-sans">Learn how to access each feature within the application.</p>
+                <div className="flex flex-col items-center justify-center text-center bg-[#1279be] px-5 py-12 w-screen">
+                  <div className="w-full max-w-5xl mx-auto">
+                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                      <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">
+                        <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Academic Menu</h1>
+                        <p className="text-sm md:text-base font-sans text-[#dde4ed] leading-relaxed">Learn to access the academic features, Student Agenda and Student Updates, within the application</p>
+                        <div className="pt-2 w-full">
+                          <VideoPlayer src="/sdh-logo-vid.mp4"/>
+                        </div>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
+                      </div>
                     </div>
                   </div>
-                </div>                         
+                </div>                 
 
-                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                  <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
-                    Parents Features
-                  </h2>
-                </div>        
+                  <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
+                    <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
+                      Parents Features
+                    </h2>
+                  </div>        
               </div>
-              <div className="inset-0 flex flex-col items-center justify-center text-center text-black bg-[#dde4ed]">
-                <div className="gap-12 w-3/4 mt-12 py-10">
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="flex-1 text-center md:text-left px-5">
-                      <h1 className="text-base md:text-4xl font-bold text-center font-sans text-[#192553]">Agenda</h1>
-                      <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">Stay one step ahead in your child's learning journey. Agenda gives you a clear view of upcoming classroom activities, school events, and important reminders, helping you prepare, encourage, and support your child every day.</p>
-                      <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">Whether it's a classroom activity, an assessment, or a school event, Agenda helps ensure you never miss an important moment.</p>
-                      <div className="pt-5">
+
+              <div className="flex flex-col items-center justify-center text-center text-black bg-[#dde4ed] px-5 py-12">
+                <div className="w-full max-w-5xl mx-auto">
+                  <div className="flex flex-col md:flex-row items-center text-center gap-8 md:gap-12">
+                    <div className="flex flex-col items-center md:items-start gap-4 w-full max-w-md md:max-w-none md:flex-1 md:text-left">
+                      <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Agenda</h1>
+                      <p className="text-sm md:text-base font-sans text-[#1279be] leading-relaxed">Stay one step ahead in your child's learning journey. Agenda gives you a clear view of upcoming classroom activities, school events, and important reminders, helping you prepare, encourage, and support your child every day.</p>
+                      <p className="text-sm md:text-base font-sans text-[#1279be] leading-relaxed">Whether it's a classroom activity, an assessment, or a school event, Agenda helps ensure you never miss an important moment.</p>
+                      <div className="w-full pt-2">
                         <VideoPlayer src="/sdh-logo-vid.mp4"/>
                       </div>
                     </div>
-                    <div className="flex-shrink-0 p-10">
+                    <div className="flex-shrink-0">
                       <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
                     </div>
                   </div>
                 </div>
-                <div className="gap-12 w-3/4 mt-12 py-5">
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="order-2 md:order-1 flex-shrink-0 p-10">
+              </div>
+              
+              <div className="flex flex-col items-center justify-center text-center text-black bg-[#1279be] px-5 py-12">
+                <div className="w-full max-w-5xl mx-auto">
+                  <div className="flex flex-col md:flex-row items-center text-center gap-8 md:gap-12">
+                    <div className="order-2 md:order-1 flex-shrink-0">
                       <PhoneFrame src="/SDH01384.JPG" alt="Student Update Screen"/>
                     </div>
-                    <div className="order-1 md:order-2 flex-1 text-center md:text-left px-5">
-                      <h1 className="text-base md:text-4xl font-bold text-center font-sans text-[#192553]">Student Update </h1>
-                      <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">Celebrate every learning moment with your child. Student Update allows you to follow classroom experiences through photos and meaningful stories, giving you a closer look at what your child is learning and accomplishing each day.</p>
-                      <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">It's more than just pictures—it's a window into your child's growth, creativity, and learning journey at school.</p>
-                      <div className="pt-5">
+                    <div className="order-1 md:order-2 flex flex-col items-center md:items-start gap-4 w-full max-w-md md:max-w-none md:flex-1 md:text-left">
+                      <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Student Update </h1>
+                      <p className="text-sm md:text-base font-sans text-[#dde4ed] leading-relaxed">Celebrate every learning moment with your child. Student Update allows you to follow classroom experiences through photos and meaningful stories, giving you a closer look at what your child is learning and accomplishing each day.</p>
+                      <p className="text-sm md:text-base font-sans text-[#dde4ed] leading-relaxed">It's more than just pictures—it's a window into your child's growth, creativity, and learning journey at school.</p>
+                      <div className="w-full pt-2">
                         <VideoPlayer src="/sdh-logo-vid.mp4"/>
                       </div>
                     </div>
@@ -209,9 +245,9 @@ export default function ParentGuide(){
 
               <TipsSection />
 
-              <div className="relative flex flex-col items-center justify-center text-center text-black bg-[#1279be] py-15">
+              <div className="relative flex flex-col items-center justify-center text-center text-black bg-[#dde4ed] py-15">
                 <div className="flex flex-col items-center justify-center text-center text-black z-10 w-3/4">
-                  <h1 className="text-base md:text-2xl font-sans text-[#0a1a4a] py-2">Download My SDH today and stay informed about your child's learning journey, classroom activities, and important school updates—all in one place.</h1>
+                  <h1 className="text-base md:text-2xl font-sans text-[#0a1a4a] py-2">Download MySDH today and stay informed about your child's learning journey, classroom activities, and important school updates—all in one place.</h1>
                   <h1 className="text-base md:text-xl font-sans text-[#0a1a4a] py-2">Compatible with Android and iOS</h1>
                   <div className="flex items-center gap-4 py-10">
                     <a href="">
@@ -223,11 +259,11 @@ export default function ParentGuide(){
                   </div>
                 </div>
                 <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                    <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-sans bg-white px-4 py-1 rounded-lg shadow">
-                      Frequently Asked Questions
-                    </h2>
-                  </div>               
-                </div>
+                  <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-sans bg-white px-4 py-1 rounded-lg shadow">
+                    Frequently Asked Questions
+                  </h2>
+                </div>               
+              </div>
               <div className="inset-0 flex flex-col items-center justify-center text-center text-black bg-[#0a1a4a]">
                 <div className="flex-col flex w-full mt-12 items-center">
                     <div className="flex w-full w-full mt-12 pb-6 justify-center">

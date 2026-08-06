@@ -12,7 +12,7 @@ type FAQItem = {
 }
 
 const teacherFAQs: FAQItem[] = [
-  { question: 'How do I log in to My SDH?', answer: 'Sign in using your Microsoft 365 school account. Select Sign in with Microsoft 365 and enter your school email address and password.' },
+  { question: 'How do I log in to MySDH?', answer: 'Sign in using your Microsoft 365 school account. Select Sign in with Microsoft 365 and enter your school email address and password.' },
   { question: 'How do I publish an Agenda?', answer: 'Open the Agenda feature, create a new agenda item, add the activity title, date, time, description, and any necessary information, then publish it for parents.' },
   { question: 'Can I edit an Agenda after publishing?', answer: 'Yes. You can update Agenda information whenever necessary. Parents will always see the latest published version.' },
   { question: 'How do I create a Student Update?', answer: 'Open Student Update, upload one or more photos, write a short description highlighting the learning activity, then publish the post.' },
@@ -20,6 +20,28 @@ const teacherFAQs: FAQItem[] = [
   { question: 'Why can\'t parents see my post?', answer: 'This may happen if: 1. The post has not been published. 2. The class has not been assigned correctly. 3. The student\'s parent account has not been linked. 4. There is a temporary synchronization delay. If the issue persists, contact your school\'s administrator.'},
   { question: 'What should I do if I encounter technical issues?', answer: 'Contact your school\'s IT support or administrator. If requested, provide screenshots and a description of the issue to help resolve it more quickly.' },
 ]
+
+function BgDecor(){
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* soft glow */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-400/30 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px]" />
+      
+      {/* grid overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.6) 2px, transparent 2px),
+            linear-gradient(90deg, rgba(255,255,255,0.6) 2px, transparent 2px)
+          `,
+          backgroundSize: '48px 48px',
+        }}
+      />
+    </div>
+  )
+}
 
 function FAQAccordion({ items }: { items: FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -34,9 +56,9 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
               onClick={() => setOpenIndex(isOpen ? null : index)}
               className="w-full flex items-center justify-between py-3 text-left font-sans"
             >
-              <span className="text-sm md:text-base text-[#dde4ed]">{item.question}</span>
+              <span className="text-sm md:text-2xl text-[#dde4ed]">{item.question}</span>
               <ChevronDown
-                className={`w-4 h-4 flex-shrink-0 ml-3 transition-transform duration-300 ${
+                className={`w-4 h-4 flex-shrink-0 ml-3 transition-transform duration-300 text-white ${
                   isOpen ? 'rotate-180' : ''
                 }`}
               />
@@ -47,7 +69,7 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="text-sm text-[#bcceeb] font-sans pb-4 pr-6">
+                <p className="text-sm md:text-lg text-[#bcceeb] font-sans pb-4 pr-6">
                   {item.answer}
                 </p>
               </div>
@@ -60,49 +82,53 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
 }
 
 export default function TeacherGuide(){
+    const [isRevealed, setIsRevealed] = useState(false);
     return(
         <>
           <section className="relative min-h-screen w-full">
-              <div className="relative w-full h-screen">
-                <Image src="/DSC09549.jpg" alt="Teacher Guide Banner" fill className="object-cover " />
+              <div className="relative w-full h-[500px]">
+                <BgDecor />
+                {/* <Image src="/DSC09549.jpg" alt="Teacher Guide Banner" fill className="object-cover " /> */}
 
                 <div className="absolute inset-0 bg-[#0a1a4a]/70" />
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-10">
-                  <h1 className="text-5xl font-bold md:text-7xl font-sans text-[#1279be] text-center p-2">Teacher Guide</h1>
-                  <h1 className="text-base md:text-4xl text-center font-sans text-[#dde4ed] text-center">Welcome to My SDH for Teachers</h1>
-                  <p className="text-base md:text-2xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">My SDH enables teachers to communicate learning experiences with parents through simple and meaningful updates. </p>           
+                  <h1 className="text-5xl font-bold md:text-7xl font-sans text-[#dde4ed] text-center p-2">Teacher Guide</h1>
+                  <p className="text-base md:text-2xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">MySDH enables teachers to communicate learning experiences with parents through simple and meaningful updates. </p>           
                 </div>
-
-                
-
-
               </div>
 
-              
-              <div className="relative w-full">
-                <VideoPlayer src="/sdh-logo-vid.mp4"/>
-                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                  <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
-                    Getting Started
-                  </h2>
-                </div>           
-              </div>
-
-              <div className="relative flex flex-col items-center justify-center text-center py-15 bg-[image:linear-gradient(180deg,#dde4ed_0%,#dde4ed_50%,#1279be_50%)]">          
-                <div className="w-1/2 pb-15">
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="flex-1 text-center md:text-right">
-                      <h1 className="text-base md:text-4xl font-bold font-sans text-[#192553]">Login</h1>
-                      <p className="text-base py-4 text-[#1279be] font-sans">Access My SDH using your school account.</p>
+              <div className="relative flex flex-col items-center justify-center text-center bg-[#1279be] py-10">          
+                <div className="w-1/2 py-8 items-center">
+                  {!isRevealed ? (
+                    <>
+                    <div className="flex flex-col gap-8 items-center">
+                      <h1 className="text-2xl text-base md:text-4xl font-bold font-sans text-[#dde4ed]">Teacher Guideline</h1>
+                      <h1
+                        onClick={() => setIsRevealed(true)}
+                        className="w-[150px] text-lg font-bold font-sans rounded-lg border border-[#dde4ed] text-[#dde4ed] transition hover:scale-125 text-center z-10 p-2 cursor-pointer"
+                      >
+                        Click Here
+                      </h1>
                     </div>
-                    <div className="flex-shrink-0 p-10 md:pb-5">
-                      <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
+                    </>
+                  ) : (
+                    <div className="z-10 text-center transition-opacity duration-700 ease-in-out opacity-0 animate-[fadeIn_0.6s_ease-in-out_0.3s_forwards]">
+                      <a href="https://ypph.sharepoint.com/sites/EDUTECHSDH-SLH673/SitePages/MySDH-Teacher's-Guide.aspx" target="_blank" rel="noopener noreferrer">
+                        <h2 className="text-xl md:text-4xl font-bold font-sans mb-4 underline">Teacher Guideline Sharepoint</h2>
+                      </a>
+                      
+                      <button
+                        onClick={() => setIsRevealed(false)}
+                        className="mt-6 font-sans rounded border border-[#dde4ed] px-4 py-2 text-sm hover:bg-[#dde4ed] hover:text-[#0a1a4a] transition"
+                      >
+                        Back
+                      </button>
                     </div>
-                  </div>
+                  )}
                 </div> 
 
-                <div className="w-1/2 pb-15">
+                {/* <div className="w-1/2 pb-15">
                   <div className="flex flex-col md:flex-row items-center text-center">
                     <div className="order-2 md:order-1 flex-shrink-0 p-10 md:pb-5">
                       <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
@@ -112,17 +138,11 @@ export default function TeacherGuide(){
                       <p className="text-base py-4 text-[#dde4ed_25] font-sans">Manage your classroom information from one dashboard.</p>
                     </div>
                   </div>
-                </div>                      
-
-                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                  <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
-                    Teachers Features
-                  </h2>
-                </div>        
+                </div>                       */}
+      
               </div> 
 
-
-              <div className="inset-0 flex flex-col items-center justify-center text-center bg-[#dde4ed]">
+              {/* <div className="inset-0 flex flex-col items-center justify-center text-center bg-[#dde4ed]">
                 <div className="gap-12 w-3/4 mt-12 md:py-10">
                   <div className="flex flex-col md:flex-row items-center text-center">
                     <div className="flex-1 text-center md:text-left px-5">
@@ -165,11 +185,11 @@ export default function TeacherGuide(){
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
          
               <div className="relative flex flex-col items-center justify-center text-center text-black bg-[#dde4ed] py-15">
                 <div className="flex flex-col items-center justify-center text-center text-black z-10 w-3/4">
-                  <h1 className="text-base md:text-2xl font-sans text-[#0a1a4a] py-2">Download My SDH today and stay informed about your child's learning journey, classroom activities, and important school updates—all in one place.</h1>
+                  <h1 className="text-base md:text-2xl font-sans text-[#0a1a4a] py-2">Download MySDH today and stay informed about your child's learning journey, classroom activities, and important school updates—all in one place.</h1>
                   <h1 className="text-base md:text-xl font-sans text-[#0a1a4a] py-2">Compatible with Android and iOS</h1>
                   <div className="flex items-center gap-4 py-10">
                     <a href="">
@@ -179,13 +199,14 @@ export default function TeacherGuide(){
                       <Image src="/googleplay1.png" alt="Play Store" width={250} height={80}/>
                     </a>
                   </div>
-                </div>
+                </div>   
                 <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                    <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
-                      Frequently Asked Questions
-                    </h2>
-                  </div>               
-                </div>
+                  <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
+                    Frequently Asked Questions
+                  </h2>
+                </div>           
+              </div>
+              
               <div className="inset-0 flex flex-col items-center justify-center text-center text-black bg-[#0a1a4a]">
                 <div className="flex-col flex w-full mt-12 items-center">
                     <div className="flex w-full w-full mt-12 pb-6 justify-center">
