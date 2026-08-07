@@ -91,7 +91,7 @@ export default function ParentGuide(){
     
     return(
         <>
-            <section className="relative min-h-screen w-full">
+            <section className="relative min-h-screen">
               <div className="relative w-full h-[500px]">
                 {/* <Image src="/reading-with-dad.jpg" alt="Parent Guide Banner" fill className="object-cover " /> */}
                 <BgDecor />
@@ -132,7 +132,7 @@ export default function ParentGuide(){
 
               <div className="relative flex flex-col items-center justify-center text-center">          
 
-                <div className="flex flex-col items-center justify-center text-center bg-[#dde4ed] px-5 py-12 w-screen">
+                <div className="flex flex-col items-center justify-center text-center bg-[#dde4ed] px-5 py-12 w-full">
                   <div className="w-full max-w-5xl mx-auto">
                     <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                       <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">
@@ -149,7 +149,7 @@ export default function ParentGuide(){
                   </div>
                 </div>                
 
-                <div className="flex flex-col items-center justify-center text-center bg-[#1279be] px-5 py-12 w-screen">
+                <div className="flex flex-col items-center justify-center text-center bg-[#1279be] px-5 py-12 w-full">
                   <div className="w-full max-w-5xl mx-auto">
                     <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                       <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">
@@ -166,7 +166,7 @@ export default function ParentGuide(){
                   </div>
                 </div>    
 
-                <div className="flex flex-col items-center justify-center text-center bg-[#dde4ed] px-5 py-12 w-screen">
+                <div className="flex flex-col items-center justify-center text-center bg-[#dde4ed] px-5 py-12 w-full">
                   <div className="w-full max-w-5xl mx-auto">
                     <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                       <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">
@@ -183,7 +183,7 @@ export default function ParentGuide(){
                   </div>
                 </div>                
 
-                <div className="flex flex-col items-center justify-center text-center bg-[#1279be] px-5 py-12 w-screen">
+                <div className="flex flex-col items-center justify-center text-center bg-[#1279be] px-5 py-12 w-full">
                   <div className="w-full max-w-5xl mx-auto">
                     <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                       <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">

@@ -79,7 +79,7 @@ export default function Banner(){
                         src="/banner-model1.png"
                         alt="Main Banner"
                         fill
-                        className="object-cover object-top"
+                        className="object-contain"
                       />
                     </div>
                   </div>
