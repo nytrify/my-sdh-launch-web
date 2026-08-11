@@ -34,16 +34,16 @@ export default function Guide() {
 
     return (
         <>
-            <section className="relative justify-center items-center h-screen w-full bg-[#dde4ed] flex">
+            <section className="relative justify-center items-center w-full h-max bg-white flex py-30">
               <div className="flex flex-col md:flex-row items-center gap-6 w-5/6">               
-                <div className="order-2 md:order-1 w-full md:w-1/2 md:h-72 group relative">
+                <div className="order-2 md:order-1 w-full md:w-1/2 h-auto group relative">
                   <div ref={videoRef as React.RefObject<HTMLDivElement>} 
                       className={`flex items-center justify-center gap-4 transition-all duration-1000 ease-out delay-300 ${videoInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <VideoPlayer src="/sdh-logo-vid.mp4"/>
                   </div>
                 </div>
 
-                <div className="order-1 md:order-2 w-full md:w-1/2 md:h-64 group relative">
+                <div className="order-1 md:order-2 w-full md:w-1/2 group relative">
                   <div ref={headingRef as React.RefObject<HTMLDivElement>} 
                       className={`flex items-center gap-4 px-10 pb-6 transition-all duration-700 ease-out ${headingInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
                     <h1 className="text-5xl font-bold md:text-5xl text-[#192553] font-sans text-center md:text-left">Discover MySDH in Just A Few Minutes</h1>
@@ -61,13 +61,12 @@ export default function Guide() {
               </div>              
             </section>
 
-            <section className="relative md:min-h-screen w-full">
+            <section className="relative w-full">
               {/* <Image src="/DSC09549.JPG" alt="Main Banner" fill className="object-cover" /> */}
-              <div className="inset-0 flex flex-col items-center justify-center text-center bg-[#1279be]">
-                <BgDecor />
+              <div className="inset-0 flex flex-col items-center justify-center text-center bg-white">
                 <h1 className="text-5xl font-bold md:text-7xl z-10 font-sans text-[#192553] p-10">Explore the User's Guide</h1>
-                <h1 className="text-base md:text-3xl z-10 font-sans text-white px-10">A Better Way To Stay Connected</h1>
-                <p className="max-w-lg pt-4 z-10 font-sans text-white px-8">Education is most effective when schools and families work together. MySDH makes communication simple, meaningful, and accessible—helping everyone stay connected to each student's learning journey. Start exploring the application guide based on your needs.</p>
+                <h1 className="text-base md:text-3xl z-10 font-sans text-[#192553] px-10">A Better Way To Stay Connected</h1>
+                <p className="max-w-lg pt-4 z-10 font-sans text-[#192553] px-8">Education is most effective when schools and families work together. MySDH makes communication simple, meaningful, and accessible—helping everyone stay connected to each student's learning journey. Start exploring the application guide based on your needs.</p>
                 <div className="flex w-full mt-12">
                   <div className="w-1/2 h-64 md:h-96 overflow-hidden group relative">
                     <Image src="/SDH08624.jpg" alt="Parent Guide" fill className="object-cover" />

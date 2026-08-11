@@ -56,9 +56,9 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
               onClick={() => setOpenIndex(isOpen ? null : index)}
               className="w-full flex items-center justify-between py-3 text-left font-sans"
             >
-              <span className="text-sm md:text-2xl text-[#dde4ed]">{item.question}</span>
+              <span className="text-sm md:text-2xl text-[#0a1a4a]">{item.question}</span>
               <ChevronDown
-                className={`w-4 h-4 flex-shrink-0 ml-3 transition-transform duration-300 text-white ${
+                className={`w-4 h-4 flex-shrink-0 ml-3 transition-transform duration-300 text-[#0a1a4a] ${
                   isOpen ? 'rotate-180' : ''
                 }`}
               />
@@ -69,7 +69,7 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="text-sm md:text-lg text-[#bcceeb] font-sans pb-4 pr-6">
+                <p className="text-sm md:text-lg text-[#1940b5] font-sans pb-4 pr-6">
                   {item.answer}
                 </p>
               </div>
@@ -98,15 +98,15 @@ export default function TeacherGuide(){
                 </div>
               </div>
 
-              <div className="relative flex flex-col items-center justify-center text-center bg-[#1279be] py-10">          
+              <div className="relative flex flex-col items-center justify-center text-center bg-white py-10">          
                 <div className="w-1/2 py-8 items-center">
                   {!isRevealed ? (
                     <>
                     <div className="flex flex-col gap-8 items-center">
-                      <h1 className="text-2xl text-base md:text-4xl font-bold font-sans text-[#dde4ed]">Teacher Guideline</h1>
+                      <h1 className="text-2xl text-base md:text-4xl font-bold font-sans text-[#192553]">Access The Teacher Guideline</h1>
                       <h1
                         onClick={() => setIsRevealed(true)}
-                        className="w-[150px] text-lg font-bold font-sans rounded-lg border border-[#dde4ed] text-[#dde4ed] transition hover:scale-125 text-center z-10 p-2 cursor-pointer"
+                        className="w-[150px] text-lg font-bold font-sans rounded-lg border border-[#dde4ed] text-[#192553] transition hover:scale-125 text-center z-10 p-2 cursor-pointer"
                       >
                         Click Here
                       </h1>
@@ -115,79 +115,24 @@ export default function TeacherGuide(){
                   ) : (
                     <div className="z-10 text-center transition-opacity duration-700 ease-in-out opacity-0 animate-[fadeIn_0.6s_ease-in-out_0.3s_forwards]">
                       <a href="https://ypph.sharepoint.com/sites/EDUTECHSDH-SLH673/SitePages/MySDH-Teacher's-Guide.aspx" target="_blank" rel="noopener noreferrer">
-                        <h2 className="text-xl md:text-4xl font-bold font-sans mb-4 underline">Teacher Guideline Sharepoint</h2>
+                        <h2 className="text-xl md:text-4xl font-bold font-sans mb-4 underline text-[#192553]">Teacher Guideline Sharepoint</h2>
                       </a>
                       
                       <button
                         onClick={() => setIsRevealed(false)}
-                        className="mt-6 font-sans rounded border border-[#dde4ed] px-4 py-2 text-sm hover:bg-[#dde4ed] hover:text-[#0a1a4a] transition"
+                        className="mt-6 font-sans rounded border border-[#192553] px-4 py-2 text-sm text-[#192553] hover:bg-[#dde4ed] hover:text-[#192553] transition"
                       >
                         Back
                       </button>
                     </div>
                   )}
-                </div> 
-
-                {/* <div className="w-1/2 pb-15">
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="order-2 md:order-1 flex-shrink-0 p-10 md:pb-5">
-                      <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
-                    </div>
-                    <div className="order-1 md:order-2 flex-1 text-center md:text-left">
-                      <h1 className="text-base md:text-4xl font-bold font-sans text-[#192553]">Dashboard</h1>
-                      <p className="text-base py-4 text-[#dde4ed_25] font-sans">Manage your classroom information from one dashboard.</p>
-                    </div>
-                  </div>
-                </div>                       */}
-      
+                </div>    
+                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
+                  <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-[#192553]/30 z-0" />                  
+                </div>   
               </div> 
-
-              {/* <div className="inset-0 flex flex-col items-center justify-center text-center bg-[#dde4ed]">
-                <div className="gap-12 w-3/4 mt-12 md:py-10">
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="flex-1 text-center md:text-left px-5">
-                      <h1 className="text-base md:text-4xl font-bold text-center font-sans text-[#0a1a4a]">Agenda</h1>
-                      <p className="text-base pt-4 font-sans text-center md:text-left text-[#1279be]">Agenda enables teachers to share upcoming classroom activities, learning plans, and school events, helping families prepare and actively support their children's learning. </p>
-                      <ul className="list-disc pl-6 text-left space-y-2 font-sans text-[#1279be] py-4">
-                        <li>Use clear and descriptive titles.</li>
-                        <li>Include dates and times.</li>
-                        <li>Provide any preparation or materials needed.</li>
-                        <li>Keep information concise and easy to understand.</li>
-                      </ul>
-                      <div className="pt-5">
-                        <VideoPlayer src="/sdh-logo-vid.mp4"/>
-                      </div>
-                    </div>
-                    <div className="flex-shrink-0 p-10 md:pb-5">
-                      <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="inset-0 flex flex-col items-center justify-center text-center bg-[#1279be]">
-                <div className="gap-12 w-3/4 mt-12 md:py-5">
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="order-2 md:order-1 flex-shrink-0 p-10 md:pb-5">
-                      <PhoneFrame src="/SDH01384.JPG" alt="Student Update Screen"/>
-                    </div>
-                    <div className="order-1 md:order-2 flex-1 text-center md:text-left px-5">
-                      <h1 className="text-base md:text-4xl font-bold text-center font-sans text-[#192553]">Student Update </h1>
-                      <p className="text-base pt-4 font-sans text-center md:text-left text-[#dde4ed]">Bring learning to life beyond the classroom. Student Update enables teachers to share authentic learning moments through photos and reflections, helping parents better understand and celebrate their child's growth.</p>
-                      <ul className="list-disc pl-6 text-left space-y-2 font-sans text-[#dde4ed] py-4">
-                        <li>Capture authentic learning moments.</li>
-                        <li>Write clear and positive descriptions.</li>
-                        <li>Highlight learning objectives and achievements.</li>
-                        <li>Follow school guidelines for student privacy.</li>
-                      </ul>                        
-                    <div className="pt-5">
-                        <VideoPlayer src="/sdh-logo-vid.mp4"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
          
-              <div className="relative flex flex-col items-center justify-center text-center text-black bg-[#dde4ed] py-15">
+              <div className="relative flex flex-col items-center justify-center text-center text-black bg-white py-15">
                 <div className="flex flex-col items-center justify-center text-center text-black z-10 w-3/4">
                   <h1 className="text-base md:text-2xl font-sans text-[#0a1a4a] py-2">Download MySDH today and stay informed about your child's learning journey, classroom activities, and important school updates—all in one place.</h1>
                   <h1 className="text-base md:text-xl font-sans text-[#0a1a4a] py-2">Compatible with Android and iOS</h1>
@@ -201,13 +146,14 @@ export default function TeacherGuide(){
                   </div>
                 </div>   
                 <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                  <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-white px-4 py-1 rounded-lg shadow">
+                  <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-[#192553]/30 z-0" />                  
+                  <h2 className="relative z-10 text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-[#dde4ed] px-4 py-1 rounded-lg shadow">
                     Frequently Asked Questions
                   </h2>
-                </div>           
+                </div>          
               </div>
               
-              <div className="inset-0 flex flex-col items-center justify-center text-center text-black bg-[#0a1a4a]">
+              <div className="inset-0 flex flex-col items-center justify-center text-center text-black bg-white">
                 <div className="flex-col flex w-full mt-12 items-center">
                     <div className="flex w-full w-full mt-12 pb-6 justify-center">
                       <div className="w-1/2 text-center z-10 pb-5">

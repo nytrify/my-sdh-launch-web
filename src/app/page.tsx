@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Navbar />
       
-      <main className="flex-grow">
+      <main className="flex-grow w-screen">
         <Banner />
         <Guide />
         <Download />
