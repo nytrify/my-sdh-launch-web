@@ -72,7 +72,7 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="text-sm md:text-lg text-[#1940b5] font-sans pb-4 pr-6">
+                <p className="text-sm md:text-lg text-[#1940b5] font-sans pb-4 pr-6 text-left">
                   {item.answer}
                 </p>
               </div>

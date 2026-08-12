@@ -9,7 +9,7 @@ type FAQItem = {
 }
 
 const footerFAQS: FAQItem[] = [
-  { question: 'Is MySDH available on Android and iPhone', answer: 'Yes. MySDH is available for both Android and iOS devices. ' },
+  { question: 'Is MySDH available on Android and iPhone?', answer: 'Yes. MySDH is available for both Android and iOS devices. ' },
   { question: 'Does MySDH require an internet connection? ', answer: 'Yes. An internet connection is required to receive the latest updates, synchronize information, and access new content.' },
   { question: 'Is MySDH free to use? ', answer: 'Yes. MySDH is provided by your school for parents and teachers.' },
   { question: 'How often is information updated? ', answer: 'Information is updated whenever teachers or the school publish new content. Simply refresh the app or ensure your internet connection is active to view the latest updates.' },
@@ -42,7 +42,7 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="text-sm md:text-lg pb-4 pr-6 text-[#1940b5] font-sans">
+                <p className="text-sm md:text-lg pb-4 pr-6 text-[#1940b5] font-sans text-left">
                   {item.answer}
                 </p>
               </div>
