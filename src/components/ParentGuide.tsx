@@ -91,37 +91,59 @@ export default function ParentGuide(){
     
     return(
         <>
-            <section className="relative min-h-screen">
-              <div className="relative w-full h-[500px] overflow-hidden">
-                {/* <Image src="/reading-with-dad.jpg" alt="Parent Guide Banner" fill className="object-cover " /> */}
+            <section className="relative w-full bg-[#0a1a4a] h-[900px] sm:h-[1000px] md:h-[700px] lg:h-[800px] flex items-center z-10 overflow-hidden pt-35 md:pt-2">
+              {/* <div className="relative w-full h-[650px] md:h-[500px] overflow-hidden">
                 <BgDecor />
 
                 <div className="absolute inset-0 bg-[#0a1a4a]/70" />
 
-                <div className="relative grid md:grid-cols-2 items-center h-full">
+                <div className="relative grid md:grid-cols-2 items-center h-full p-5">
                   <div className="relative z-10 text-[#dde4ed] pt-15 md:pt-0">
                     <h1 className="text-5xl font-bold md:text-5xl font-sans text-[#dde4ed] text-center p-2">Parent Guide</h1>
-                    <p className="text-base md:text-xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">Welcome to MySDH, the parent application designed to help you stay connected with your child's learning journey.</p>  
+                    <p className="w-full text-base md:text-xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">Welcome to MySDH, the parent application designed to help you stay connected with your child's learning journey.</p>  
                   </div>
 
-                  <div className="relative flex justify-center md:justify-end z-10">
-                    <div className="relative w-full sm:max-w-lg md:max-w-xl h-full">
+                  <div className="relative flex justify-center md:justify-end z-10 h-[280px] md:h-full items-end">
+                    <div className="relative w-full max-w-[280px] sm:max-w-lg md:max-w-xl h-full">
                       <Image
                         src="/banner-model1.png"
                         alt="Main Banner"
                         fill
-                        className="object-contain object-bottom"
+                        className="object-contain"
                       />
                     </div>
                   </div>                  
                 </div>
 
-                {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-10">
-                  <h1 className="text-5xl font-bold md:text-5xl font-sans text-[#dde4ed] text-center p-2">Parent Guide</h1>
-                  <p className="text-base md:text-xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">Welcome to MySDH, the parent application designed to help you stay connected with your child's learning journey.</p>       
-                </div> */}
+              </div> */}
+
+              <div className="max-w-7xl w-full mx-auto px-6 md:px-10">
+                <BgDecor />
+
+                <div className="absolute inset-0 bg-[#0a1a4a]/70" />
+
+                <div className="grid md:grid-cols-2 items-center">
+                  <div className="relative z-10 text-[#dde4ed] pt-15 md:pt-0">
+                    <h1 className="text-5xl font-bold md:text-5xl font-sans text-[#dde4ed]">Parent Guide</h1>
+                    <p className="w-full text-base md:text-xl pt-4 text-[#dde4ed] font-sans md:w-3/4">Welcome to MySDH, the parent application designed to help you stay connected with your child's learning journey.</p>  
+                  </div>
+
+                  <div className="relative flex justify-center md:justify-end -mb-[100px] md:-mb-16 z-10">
+                    <div className="relative w-full sm:max-w-lg md:max-w-xl aspect-[3/4]">
+                      <Image
+                        src="/banner-model1.png"
+                        alt="Main Banner"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>                  
+                </div>
 
               </div>
+            </section>
+
+            <section className="relative min-h-screen">
 
               <div className="relative flex flex-col items-center justify-center text-center bg-white h-max py-15">
                 <div className="w-3/4 flex flex-col items-center justify-center">
