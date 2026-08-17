@@ -42,7 +42,7 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="text-sm md:text-lg pb-4 pr-6 text-[#1940b5] font-sans text-left">
+                <p className="text-sm md:text-lg pb-4 pr-6 text-[#0a1a4a] font-sans text-left">
                   {item.answer}
                 </p>
               </div>
@@ -57,7 +57,7 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
 export default function Download(){
     return(
         <>
-            <section className="relative min-h-screen w-full bg-white"> 
+            <section className="relative h-max w-full bg-white"> 
               <div id="download" className="relative flex flex-col items-center justify-center text-center bg-white h-max py-15">
                 <div className="relative flex flex-col items-center justify-center text-center text-black z-10 w-screen">
                   <h1 className="text-base md:text-3xl font-sans text-[#192553] py-2">Start Using MySDH Today!</h1>
@@ -71,20 +71,20 @@ export default function Download(){
                     </a>
                   </div>
                 </div>
-                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
+                {/* <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
                     <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-[#192553]/30 z-0" />      
                     <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-sans bg-[#dde4ed] px-4 py-1 rounded-lg shadow font-bold z-10">
                       Frequently Asked Questions
                     </h2>
-                </div>  
+                </div>   */}
                </div>
-                <div className="relative flex flex-col items-center justify-center text-center h-max py-15 bg-white">
+                {/* <div className="relative flex flex-col items-center justify-center text-center h-max py-15 bg-white">
                   <div className="flex w-full w-full mt-12 pb-6 justify-center">
                     <div className="w-1/2 text-center z-10 text-black">
                       <FAQAccordion items={footerFAQS} />
                     </div>
                   </div>
-                </div>       
+                </div>        */}
 
             </section>
 

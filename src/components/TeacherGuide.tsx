@@ -24,9 +24,9 @@ const teacherFAQs: FAQItem[] = [
 function BgDecor(){
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* soft glow */}
+      {/* soft glow
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-400/30 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px]" /> */}
       
       {/* grid overlay */}
       <div 
@@ -69,7 +69,7 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="text-sm md:text-lg text-[#1940b5] font-sans pb-4 pr-6 text-left">
+                <p className="text-sm md:text-lg text-[#0a1a4a] font-sans pb-4 pr-6 text-left">
                   {item.answer}
                 </p>
               </div>
