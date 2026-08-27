@@ -73,10 +73,10 @@ export default function Banner(){
                     </div>
                   </div>
                   {/* Image column */}
-                  <div className="relative flex justify-center md:justify-end -mb-[100px] md:-mb-16 z-10">
+                  <div className="relative flex justify-center md:justify-end -mb-[100px] md:-mb-16 z-10 h-9/10">
                     <div className="relative w-full sm:max-w-lg md:max-w-xl aspect-[3/4]">
                       <Image
-                        src="/banner-model1.png"
+                        src="/display-mysdh.png"
                         alt="Main Banner"
                         fill
                         className="object-contain"

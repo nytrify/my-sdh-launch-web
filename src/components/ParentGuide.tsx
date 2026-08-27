@@ -7,6 +7,10 @@ import { useState } from "react";
 import { useInView } from "@/app/hooks/UseInView";
 import TipsSection from "./TipsSection";
 import VideoPlayer from "./VideoPlayer";
+import type { Feature } from '@/components/FeatureCard';
+import FeatureCard from "@/components/FeatureCard";
+import SectionDivider from "./SectionDivider";
+
 
 type FAQItem = {
   question: string
@@ -26,7 +30,7 @@ const parentFAQs: FAQItem[] = [
 
 function BgDecor(){
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 pointer-events-none">
       {/* soft glow */}
       {/* <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-400/30 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px]" /> */}
@@ -88,34 +92,76 @@ export default function ParentGuide(){
 
     const { ref: headingRef, isInView: headingInView } = useInView();
     const { ref: textRef, isInView: textInView } = useInView();
-    
+    const gettingStartedFeatures: Feature[] = [
+      {
+        id: 'sign-in',
+        title: 'Sign in',
+        description: ['Sign in using the account provided by your school.'],
+        videoSrc: '/sdh-logo-vid.mp4',
+        imageSrc: '/SDH01384.JPG',
+        imageAlt: 'Sign in Screen',
+        className: 'mt-14',
+      },
+      {
+        id: 'forgot-password',
+        title: 'Forgot Password',
+        description: ['Reset your password securely if you are unable to access your account.'],
+        videoSrc: '/sdh-logo-vid.mp4',
+        imageSrc: '/SDH01384.JPG',
+        imageAlt: 'Forgot Password Screen',
+      },
+      {
+        id: 'dashboard',
+        title: 'Dashboard',
+        description: ['View all important information from one central dashboard.'],
+        videoSrc: '/sdh-logo-vid.mp4',
+        imageSrc: '/SDH01384.JPG',
+        imageAlt: 'Dashboard Screen',
+      },
+      {
+        id: 'academic-menu',
+        title: 'Academic Menu',
+        description: [
+          'Learn to access the academic features, Student Agenda and Student Updates, within the application',
+        ],
+        videoSrc: '/sdh-logo-vid.mp4',
+        imageSrc: '/SDH01384.JPG',
+        imageAlt: 'Academic Menu Screen',
+        className: 'mb-8',
+      },
+    ];
+
+    const parentsFeatures: Feature[] = [
+      {
+        id: 'agenda',
+        title: 'Agenda',
+        description: [
+          "Stay one step ahead in your child's learning journey. Agenda gives you a clear view of upcoming classroom activities, school events, and important reminders, helping you prepare, encourage, and support your child every day.",
+          "Whether it's a classroom activity, an assessment, or a school event, Agenda helps ensure you never miss an important moment.",
+        ],
+        videoSrc: '/sdh-logo-vid.mp4',
+        imageSrc: '/SDH01384.JPG',
+        imageAlt: 'Agenda Screen',
+        textAlign: 'left',
+      },
+      {
+        id: 'student-update',
+        title: 'Student Update',
+        description: [
+          "Celebrate every learning moment with your child. Student Update allows you to follow classroom experiences through photos and meaningful stories, giving you a closer look at what your child is learning and accomplishing each day.",
+          "It's more than just pictures—it's a window into your child's growth, creativity, and learning journey at school.",
+        ],
+        videoSrc: '/sdh-logo-vid.mp4',
+        imageSrc: '/SDH01384.JPG',
+        imageAlt: 'Student Update Screen',
+        imagePosition: 'left',
+        textAlign: 'left',
+        className: 'mb-8',
+      },
+    ];
     return(
         <>
-            <section className="relative w-full bg-[#0a1a4a] h-[900px] sm:h-[1000px] md:h-[700px] lg:h-[800px] flex items-center z-10 overflow-hidden pt-35 md:pt-2">
-              {/* <div className="relative w-full h-[650px] md:h-[500px] overflow-hidden">
-                <BgDecor />
-
-                <div className="absolute inset-0 bg-[#0a1a4a]/70" />
-
-                <div className="relative grid md:grid-cols-2 items-center h-full p-5">
-                  <div className="relative z-10 text-[#dde4ed] pt-15 md:pt-0">
-                    <h1 className="text-5xl font-bold md:text-5xl font-sans text-[#dde4ed] text-center p-2">Parent Guide</h1>
-                    <p className="w-full text-base md:text-xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">Welcome to MySDH, the parent application designed to help you stay connected with your child's learning journey.</p>  
-                  </div>
-
-                  <div className="relative flex justify-center md:justify-end z-10 h-[280px] md:h-full items-end">
-                    <div className="relative w-full max-w-[280px] sm:max-w-lg md:max-w-xl h-full">
-                      <Image
-                        src="/banner-model1.png"
-                        alt="Main Banner"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  </div>                  
-                </div>
-
-              </div> */}
+            <section className="relative w-full bg-[#0a1a4a] h-[900px] sm:h-[1000px] md:h-[500px] lg:h-[500px] flex items-center z-10 pt-35 md:pt-2 overflow-hidden">
 
               <div className="max-w-7xl w-full mx-auto px-6 md:px-10">
                 <BgDecor />
@@ -124,8 +170,8 @@ export default function ParentGuide(){
 
                 <div className="grid md:grid-cols-2 items-center">
                   <div className="relative z-10 text-[#dde4ed] pt-15 md:pt-0">
-                    <h1 className="text-5xl font-bold md:text-5xl font-sans text-[#dde4ed]">Parent Guide</h1>
-                    <p className="w-full text-base md:text-xl pt-4 text-[#dde4ed] font-sans md:w-3/4">Welcome to MySDH, the parent application designed to help you stay connected with your child's learning journey.</p>  
+                    <h1 className="text-5xl font-bold md:text-5xl font-sans text-[#dde4ed] text-center md:text-left">Parent Guide</h1>
+                    <p className="w-full text-base md:text-xl pt-4 text-[#dde4ed] font-sans md:w-3/4 text-center md:text-left">Welcome to MySDH, the parent application designed to help you stay connected with your child's learning journey.</p>  
                   </div>
 
                   <div className="relative flex justify-center md:justify-end -mb-[100px] md:-mb-16 z-10">
@@ -161,134 +207,36 @@ export default function ParentGuide(){
                       <li>Switch between children if you have more than one enrolled at SDH.</li>
                     </ul> 
                   </div>
-
-                </div>
-                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                  <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-[#192553]/30 z-0" />                  
-                  <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-[#dde4ed] px-4 py-1 rounded-lg shadow z-10">
-                    Getting Started
-                  </h2>
                 </div>
               </div>
+          
+              <div className="relative bg-white">
+                <div className="flex flex-row gap-6 max-w-7xl mx-auto px-6">
+                  <nav className="hidden lg:flex flex-col gap-3 sticky top-24 self-start h-fit bg-[#f5f6f7] backdrop-blur px-4 py-6 rounded-2xl shadow-lg border border-gray-200 max-w-[180px] shrink-0">
+                    {[...gettingStartedFeatures, ...parentsFeatures].map((f) => (
+                      <a key={f.id} href={`#${f.id}`} className="text-sm text-[#1279be] hover:underline hover:text-[#0a1a4a] transition font-sans">
+                        {f.title}
+                      </a>
+                    ))}
+                  </nav>
 
-              <div className="relative flex flex-col items-center justify-center text-center bg-white gap-8 pt-8">          
+                  <div className="flex-1 min-w-0">
+                    <div className="relative flex flex-col items-center justify-center text-center gap-8 pt-8">
+                      <SectionDivider label="Getting Started" position="top" />
+                      {gettingStartedFeatures.map((feature) => (
+                        <FeatureCard key={feature.id} feature={feature} />
+                      ))}
+                      <SectionDivider label="Parents Features" position="bottom" />
+                    </div>
 
-                <div className="flex flex-col items-center justify-center text-center bg-[#f5f6f7] px-12 py-12 rounded-2xl">
-                  <div className="w-full max-w-5xl mx-auto">
-                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                      <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">
-                        <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Sign in</h1>
-                        <p className="text-sm md:text-base font-sans text-[#192553] leading-relaxed">Sign in using the account provided by your school.</p>
-                        <div className="pt-2 w-full">
-                          <VideoPlayer src="/sdh-logo-vid.mp4"/>
-                        </div>
-                      </div>
-                      <div className="flex-shrink-0">
-                        <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
-                      </div>
+                    <div className="relative flex flex-col items-center justify-center text-center gap-8 pt-8">
+                      {parentsFeatures.map((feature) => (
+                        <FeatureCard key={feature.id} feature={feature} />
+                      ))}
                     </div>
                   </div>
-                </div>                
-
-                <div className="flex flex-col items-center justify-center text-center bg-[#f5f6f7] px-12 py-12 rounded-2xl">
-                  <div className="w-full max-w-5xl mx-auto">
-                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                      <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">
-                        <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Forgot Password</h1>
-                        <p className="text-sm md:text-base font-sans text-[#192553] leading-relaxed">Reset your password securely if you are unable to access your account.</p>
-                        <div className="pt-2 w-full">
-                          <VideoPlayer src="/sdh-logo-vid.mp4"/>
-                        </div>
-                      </div>
-                      <div className="flex-shrink-0">
-                        <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>    
-
-                <div className="flex flex-col items-center justify-center text-center bg-[#f5f6f7] px-12 py-12 rounded-2xl">
-                  <div className="w-full max-w-5xl mx-auto">
-                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                      <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">
-                        <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Dashboard</h1>
-                        <p className="text-sm md:text-base font-sans text-[#192553] leading-relaxed">View all important information from one central dashboard.</p>
-                        <div className="pt-2 w-full">
-                          <VideoPlayer src="/sdh-logo-vid.mp4"/>
-                        </div>
-                      </div>
-                      <div className="flex-shrink-0">
-                        <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>                
-
-                <div className="flex flex-col items-center justify-center text-center bg-[#f5f6f7] px-12 py-12 rounded-2xl mb-8">
-                  <div className="w-full max-w-5xl mx-auto">
-                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                      <div className="flex flex-col items-center gap-4 w-full max-w-md md:max-w-none md:flex-1">
-                        <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Academic Menu</h1>
-                        <p className="text-sm md:text-base font-sans text-[#192553] leading-relaxed">Learn to access the academic features, Student Agenda and Student Updates, within the application</p>
-                        <div className="pt-2 w-full">
-                          <VideoPlayer src="/sdh-logo-vid.mp4"/>
-                        </div>
-                      </div>
-                      <div className="flex-shrink-0">
-                        <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>     
-
-                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                  <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-[#192553]/30 z-0" />                  
-                  <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-bold font-sans bg-[#dde4ed] px-4 py-1 rounded-lg shadow z-10">
-                    Parents Features
-                  </h2>
-                </div>                 
-  
+                </div>
               </div>
-
-              <div className="relative flex flex-col items-center justify-center text-center bg-white gap-8 pt-8"> 
-                <div className="flex flex-col items-center justify-center text-center text-black bg-[#f5f6f7] px-12 py-12 rounded-2xl">
-                  <div className="w-full max-w-5xl mx-auto">
-                    <div className="flex flex-col md:flex-row items-center text-center gap-8 md:gap-12">
-                      <div className="flex flex-col items-center md:items-start gap-4 w-full max-w-md md:max-w-none md:flex-1 md:text-left">
-                        <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Agenda</h1>
-                        <p className="text-sm md:text-base font-sans text-[#192553] leading-relaxed">Stay one step ahead in your child's learning journey. Agenda gives you a clear view of upcoming classroom activities, school events, and important reminders, helping you prepare, encourage, and support your child every day.</p>
-                        <p className="text-sm md:text-base font-sans text-[#192553] leading-relaxed">Whether it's a classroom activity, an assessment, or a school event, Agenda helps ensure you never miss an important moment.</p>
-                        <div className="w-full pt-2">
-                          <VideoPlayer src="/sdh-logo-vid.mp4"/>
-                        </div>
-                      </div>
-                      <div className="flex-shrink-0">
-                        <PhoneFrame src="/SDH01384.JPG" alt="Agenda Screen"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex flex-col items-center justify-center text-center text-black bg-[#f5f6f7] px-12 py-12 mb-8 rounded-2xl">
-                  <div className="w-full max-w-5xl mx-auto">
-                    <div className="flex flex-col md:flex-row items-center text-center gap-8 md:gap-12">
-                      <div className="order-2 md:order-1 flex-shrink-0">
-                        <PhoneFrame src="/SDH01384.JPG" alt="Student Update Screen"/>
-                      </div>
-                      <div className="order-1 md:order-2 flex flex-col items-center md:items-start gap-4 w-full max-w-md md:max-w-none md:flex-1 md:text-left">
-                        <h1 className="text-2xl md:text-4xl font-bold font-sans text-[#192553]">Student Update </h1>
-                        <p className="text-sm md:text-base font-sans text-[#192553] leading-relaxed">Celebrate every learning moment with your child. Student Update allows you to follow classroom experiences through photos and meaningful stories, giving you a closer look at what your child is learning and accomplishing each day.</p>
-                        <p className="text-sm md:text-base font-sans text-[#192553] leading-relaxed">It's more than just pictures—it's a window into your child's growth, creativity, and learning journey at school.</p>
-                        <div className="w-full pt-2">
-                          <VideoPlayer src="/sdh-logo-vid.mp4"/>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>         
-
-
 
               <TipsSection />
 
@@ -297,10 +245,10 @@ export default function ParentGuide(){
                   <h1 className="text-base md:text-2xl font-sans text-[#0a1a4a] py-2">Download MySDH today and stay informed about your child's learning journey, classroom activities, and important school updates—all in one place.</h1>
                   <h1 className="text-base md:text-xl font-sans text-[#0a1a4a] py-2">Compatible with Android and iOS</h1>
                   <div className="flex items-center gap-4 py-10">
-                    <a href="">
+                    <a href="https://apps.apple.com/id/app/mysdh/id6790746164" target="_blank">
                       <Image src="/appstore1.png" alt="App Store" width={250} height={80}/>
                     </a>
-                    <a href="">
+                    <a href="" target="_blank">
                       <Image src="/googleplay1.png" alt="Play Store" width={250} height={80}/>
                     </a>
                   </div>

@@ -63,10 +63,10 @@ export default function Download(){
                   <h1 className="text-base md:text-3xl font-sans text-[#192553] py-2">Start Using MySDH Today!</h1>
                   <h1 className="text-base md:text-xl font-sans text-[#192553] py-2">Compatible with Android and iOS</h1>
                   <div className="flex items-center gap-4 py-10">
-                    <a href="">
+                    <a href="https://apps.apple.com/id/app/mysdh/id6790746164" target="_blank">
                       <Image src="/appstore1.png" alt="App Store" width={250} height={80}/>
                     </a>
-                    <a href="">
+                    <a href="" target="_blank">
                       <Image src="/googleplay1.png" alt="Play Store" width={250} height={80}/>
                     </a>
                   </div>

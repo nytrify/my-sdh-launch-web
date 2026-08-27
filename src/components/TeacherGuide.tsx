@@ -85,18 +85,31 @@ export default function TeacherGuide(){
     const [isRevealed, setIsRevealed] = useState(false);
     return(
         <>
-          <section className="relative min-h-screen w-full">
-              <div className="relative w-full h-[500px]">
-                <BgDecor />
-                {/* <Image src="/DSC09549.jpg" alt="Teacher Guide Banner" fill className="object-cover " /> */}
+          <section className="relative w-full bg-[#0a1a4a] h-[900px] sm:h-[1000px] md:h-[500px] lg:h-[500px] flex items-center z-10 pt-35 md:pt-2 overflow-hidden">
+            <div className="max-w-7xl w-full mx-auto px-6 md:px-10">
+              <BgDecor />
 
-                <div className="absolute inset-0 bg-[#0a1a4a]/70" />
+              <div className="absolute inset-0 bg-[#0a1a4a]/70" />
 
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-10">
-                  <h1 className="text-5xl font-bold md:text-7xl font-sans text-[#dde4ed] text-center p-2">Teacher Guide</h1>
-                  <p className="text-base md:text-2xl pt-4 text-[#dde4ed] font-sans text-center md:w-3/4">MySDH enables teachers to communicate learning experiences with parents through simple and meaningful updates. </p>           
+              <div className="grid md:grid-cols-2 items-center">
+                <div className="relative z-10 text-[#dde4ed] pt-15 md:pt-0">
+                  <h1 className="text-5xl font-bold md:text-5xl font-sans text-[#dde4ed] text-center md:text-left">Parent Guide</h1>
+                  <p className="w-full text-base md:text-xl pt-4 text-[#dde4ed] font-sans md:w-3/4 text-center md:text-left">Welcome to MySDH, the parent application designed to help you stay connected with your child's learning journey.</p>  
                 </div>
+                <div className="relative flex justify-center md:justify-end -mb-[100px] md:-mb-16 z-10">
+                  <div className="relative w-full sm:max-w-lg md:max-w-xl aspect-[3/4]">
+                    <Image
+                      src="/banner-model3.png"
+                      alt="Main Banner"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>                  
               </div>
+
+            </div>   
+          </section>               
 
               <div className="relative flex flex-col items-center justify-center text-center bg-white py-10">          
                 <div className="w-1/2 py-8 items-center">
@@ -137,10 +150,10 @@ export default function TeacherGuide(){
                   <h1 className="text-base md:text-2xl font-sans text-[#0a1a4a] py-2">Download MySDH today and stay informed about your child's learning journey, classroom activities, and important school updates—all in one place.</h1>
                   <h1 className="text-base md:text-xl font-sans text-[#0a1a4a] py-2">Compatible with Android and iOS</h1>
                   <div className="flex items-center gap-4 py-10">
-                    <a href="">
+                    <a href="https://apps.apple.com/id/app/mysdh/id6790746164" target="_blank">
                       <Image src="/appstore1.png" alt="App Store" width={250} height={80}/>
                     </a>
-                    <a href="">
+                    <a href="" target="_blank">
                       <Image src="/googleplay1.png" alt="Play Store" width={250} height={80}/>
                     </a>
                   </div>
@@ -161,8 +174,7 @@ export default function TeacherGuide(){
                       </div>
                     </div>
                   </div>
-              </div>
-            </section>          
+              </div>      
         </>
     )
 }

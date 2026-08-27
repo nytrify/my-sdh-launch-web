@@ -39,7 +39,7 @@ export default function Guide() {
                 <div className="order-2 md:order-1 w-full md:w-1/2 h-auto group relative">
                   <div ref={videoRef as React.RefObject<HTMLDivElement>} 
                       className={`flex items-center justify-center gap-4 transition-all duration-1000 ease-out delay-300 ${videoInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <VideoPlayer src="/sdh-logo-vid.mp4"/>
+                    <VideoPlayer src="/introduction-mysdh-new.mp4"/>
                   </div>
                 </div>
 
@@ -67,33 +67,50 @@ export default function Guide() {
                 <h1 className="text-5xl font-bold md:text-7xl z-10 font-sans text-[#192553] p-10">Explore the User's Guide</h1>
                 <h1 className="text-base md:text-3xl z-10 font-sans text-[#192553] px-10">A Better Way To Stay Connected</h1>
                 <p className="max-w-lg pt-4 z-10 font-sans text-[#192553] px-8">Education is most effective when schools and families work together. MySDH makes communication simple, meaningful, and accessible—helping everyone stay connected to each student's learning journey. Start exploring the application guide based on your needs.</p>
-                <div className="flex w-full mt-12">
-                  <div className="w-1/2 h-64 md:h-96 overflow-hidden group relative">
-                    <Image src="/SDH08624.jpg" alt="Parent Guide" fill className="object-cover" />
-                    <Link href="/parent-guide">
-                    <div className="absolute inset-0 bg-[#15396B]/60 group-hover:bg-[#15396B]/90 transition-colors duration-300"/>
-                      <div className="absolute inset-0 z-10 flex items-center justify-center">
-                        <h1 className="text-white font-sans md:text-2xl font-bold absolute group-hover:opacity-0 transition-opacity duration-300">Parent Guide</h1>
-                        <div className="flex-column">
-                          <p className="max-w-lg pt-4 font-sans text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Stay informed about your child's learning experiences, classroom activities, and important school updates.</p>
-                          <p className="max-w-lg pt-4 font-sans text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Click to view guide.</p>
+                <div className="flex flex-col md:flex-row w-full mt-12 gap-4 items-center">
+                  <div className="w-3/4 md:w-1/2 flex justify-center">
+                    <div className="w-4/5 h-64 md:h-96 overflow-hidden group relative border-4 border-gray-300 rounded-lg">
+                      <Image src="/SDH08624.jpg" alt="Parent Guide" fill className="object-cover" />
+                      <Link href="/parent-guide">
+                        <div className="absolute inset-0 bg-[#15396B]/60 group-hover:bg-[#15396B]/90 transition-colors duration-300" />
+                        <div className="absolute inset-0 z-10 flex items-center justify-center">
+                          <h1 className="text-white font-sans md:text-2xl font-bold absolute group-hover:opacity-0 transition-opacity duration-300">
+                            Parent Guide
+                          </h1>
+                          <div className="flex-column">
+                            <p className="max-w-lg pt-4 font-sans text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Stay informed about your child's learning experiences, classroom activities, and important school updates.
+                            </p>
+                            <p className="max-w-lg pt-4 font-sans text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Click to view guide.
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    </Link>                  
+                      </Link>
+                    </div>
                   </div>
-                  <div className="w-1/2 h-64 md:h-96 overflow-hidden group relative">
-                    <Image src="/DSC09093.jpg" alt="Parent Guide" fill className="object-cover" />
-                    <Link href="/teacher-guide">
-                    <div className="absolute inset-0 bg-[#15396B]/60 group-hover:bg-[#15396B]/90 transition-colors duration-300"/>
-                      <div className="absolute inset-0 z-10 flex items-center justify-center">
-                        <h1 className="text-white font-sans md:text-2xl font-bold absolute group-hover:opacity-0 transition-opacity duration-300">Teacher Guide</h1>
-                        <div className="flex-column">
-                          <p className="max-w-lg pt-4 font-sans text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Share learning experiences, communicate classroom activities, and keep parent engaged throughout the school year.</p>
-                          <p className="max-w-lg pt-4 font-sans text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Click to view guide.</p>
+
+                  <div className="w-3/4 md:w-1/2 flex justify-center">
+                    <div className="w-4/5 h-64 md:h-96 overflow-hidden group relative border-4 border-gray-300 rounded-lg">
+                      <Image src="/DSC09093.jpg" alt="Parent Guide" fill className="object-cover" />
+                      <Link href="/teacher-guide">
+                        <div className="absolute inset-0 bg-[#15396B]/60 group-hover:bg-[#15396B]/90 transition-colors duration-300" />
+                        <div className="absolute inset-0 z-10 flex items-center justify-center">
+                          <h1 className="text-white font-sans md:text-2xl font-bold absolute group-hover:opacity-0 transition-opacity duration-300">
+                            Teacher Guide
+                          </h1>
+                          <div className="flex-column">
+                            <p className="max-w-lg pt-4 font-sans text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Share learning experiences, communicate classroom activities, and keep parent engaged throughout the school year.
+                            </p>
+                            <p className="max-w-lg pt-4 font-sans text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Click to view guide.
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    </Link>                  
-                  </div>                  
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
