@@ -98,7 +98,7 @@ export default function ParentGuide(){
         title: 'Sign in',
         description: ['Sign in using the account provided by your school.'],
         videoSrc: '/sdh-logo-vid.mp4',
-        imageSrc: '/SDH01384.JPG',
+        imageSrc: '/signin.png',
         imageAlt: 'Sign in Screen',
         className: 'mt-14',
       },
@@ -107,7 +107,7 @@ export default function ParentGuide(){
         title: 'Forgot Password',
         description: ['Reset your password securely if you are unable to access your account.'],
         videoSrc: '/sdh-logo-vid.mp4',
-        imageSrc: '/SDH01384.JPG',
+        imageSrc: '/forgot-pass.JPEG',
         imageAlt: 'Forgot Password Screen',
       },
       {
@@ -115,7 +115,7 @@ export default function ParentGuide(){
         title: 'Dashboard',
         description: ['View all important information from one central dashboard.'],
         videoSrc: '/sdh-logo-vid.mp4',
-        imageSrc: '/SDH01384.JPG',
+        imageSrc: '/dashboard.png',
         imageAlt: 'Dashboard Screen',
       },
       {
@@ -125,7 +125,7 @@ export default function ParentGuide(){
           'Learn to access the academic features, Student Agenda and Student Updates, within the application',
         ],
         videoSrc: '/sdh-logo-vid.mp4',
-        imageSrc: '/SDH01384.JPG',
+        imageSrc: '/academic-center.JPEG',
         imageAlt: 'Academic Menu Screen',
         className: 'mb-8',
       },
@@ -140,7 +140,7 @@ export default function ParentGuide(){
           "Whether it's a classroom activity, an assessment, or a school event, Agenda helps ensure you never miss an important moment.",
         ],
         videoSrc: '/sdh-logo-vid.mp4',
-        imageSrc: '/SDH01384.JPG',
+        imageSrc: '/agenda.png',
         imageAlt: 'Agenda Screen',
         textAlign: 'left',
       },
@@ -152,7 +152,7 @@ export default function ParentGuide(){
           "It's more than just pictures—it's a window into your child's growth, creativity, and learning journey at school.",
         ],
         videoSrc: '/sdh-logo-vid.mp4',
-        imageSrc: '/SDH01384.JPG',
+        imageSrc: '/update.png',
         imageAlt: 'Student Update Screen',
         imagePosition: 'left',
         textAlign: 'left',
@@ -214,7 +214,7 @@ export default function ParentGuide(){
                 <div className="flex flex-row gap-6 max-w-7xl mx-auto px-6">
                   <nav className="hidden lg:flex flex-col gap-3 sticky top-24 self-start h-fit bg-[#f5f6f7] backdrop-blur px-4 py-6 rounded-2xl shadow-lg border border-gray-200 max-w-[180px] shrink-0">
                     {[...gettingStartedFeatures, ...parentsFeatures].map((f) => (
-                      <a key={f.id} href={`#${f.id}`} className="text-sm text-[#1279be] hover:underline hover:text-[#0a1a4a] transition font-sans">
+                      <a key={f.id} href={`#${f.id}`} className="text-sm text-[#1279be] hover:text-[#192553] transition font-sans">
                         {f.title}
                       </a>
                     ))}
@@ -248,7 +248,7 @@ export default function ParentGuide(){
                     <a href="https://apps.apple.com/id/app/mysdh/id6790746164" target="_blank">
                       <Image src="/appstore1.png" alt="App Store" width={250} height={80}/>
                     </a>
-                    <a href="" target="_blank">
+                    <a href="https://play.google.com/store/apps/details?id=id.mysdh.mobile" target="_blank">
                       <Image src="/googleplay1.png" alt="Play Store" width={250} height={80}/>
                     </a>
                   </div>
