@@ -66,7 +66,7 @@ export default function Download(){
                     <a href="https://apps.apple.com/id/app/mysdh/id6790746164" target="_blank">
                       <Image src="/appstore1.png" alt="App Store" width={250} height={80}/>
                     </a>
-                    <a href="" target="_blank">
+                    <a href="https://play.google.com/store/apps/details?id=id.mysdh.mobile" target="_blank">
                       <Image src="/googleplay1.png" alt="Play Store" width={250} height={80}/>
                     </a>
                   </div>
