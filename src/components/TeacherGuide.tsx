@@ -93,8 +93,8 @@ export default function TeacherGuide(){
 
               <div className="grid md:grid-cols-2 items-center">
                 <div className="relative z-10 text-[#dde4ed] pt-15 md:pt-0">
-                  <h1 className="text-5xl font-bold md:text-5xl font-sans text-[#dde4ed] text-center md:text-left">Parent Guide</h1>
-                  <p className="w-full text-base md:text-xl pt-4 text-[#dde4ed] font-sans md:w-3/4 text-center md:text-left">Welcome to MySDH, the parent application designed to help you stay connected with your child's learning journey.</p>  
+                  <h1 className="text-5xl font-bold md:text-5xl font-sans text-[#dde4ed] text-center md:text-left">Teacher Guide</h1>
+                  <p className="w-full text-base md:text-xl pt-4 text-[#dde4ed] font-sans md:w-3/4 text-center md:text-left">MySDH enables teachers to communicate learning experiences with parents through simple and meaningful updates.</p>  
                 </div>
                 <div className="relative flex justify-center md:justify-end -mb-[100px] md:-mb-16 z-10">
                   <div className="relative w-full sm:max-w-lg md:max-w-xl aspect-[3/4]">
