@@ -1,15 +1,14 @@
 "use client"
 
-import PhoneFrame from "./PhoneFrame"
 import Image from "next/image";
 import { ChevronDown } from 'lucide-react'
 import { useState } from "react";
 import { useInView } from "@/app/hooks/UseInView";
 import TipsSection from "./TipsSection";
-import VideoPlayer from "./VideoPlayer";
 import type { Feature } from '@/components/FeatureCard';
 import FeatureCard from "@/components/FeatureCard";
 import SectionDivider from "./SectionDivider";
+import { useActiveSection } from "@/app/hooks/UseActiveSection";
 
 
 type FAQItem = {
@@ -158,6 +157,8 @@ export default function ParentGuide(){
         className: 'mb-8',
       },
     ];
+    const allFeatures = [...gettingStartedFeatures, ...parentsFeatures];
+    const activeId = useActiveSection(allFeatures.map((f) => f.id));
     return(
         <>
             <section className="relative w-full bg-[#0a1a4a] h-[900px] sm:h-[1000px] md:h-[500px] lg:h-[500px] flex items-center z-10 pt-35 md:pt-2 overflow-hidden">
@@ -212,11 +213,18 @@ export default function ParentGuide(){
               <div className="relative bg-white">
                 <div className="flex flex-row gap-6 max-w-7xl mx-auto px-6">
                   <nav className="hidden lg:flex flex-col gap-3 sticky top-24 self-start h-fit bg-[#f5f6f7] backdrop-blur px-4 py-6 rounded-2xl shadow-lg border border-gray-200 max-w-[180px] shrink-0">
-                    {[...gettingStartedFeatures, ...parentsFeatures].map((f) => (
-                      <a key={f.id} href={`#${f.id}`} className="text-sm text-[#1279be] hover:text-[#192553] transition font-sans">
+                    {allFeatures.map((f) => {
+                      const isActive = f.id === activeId;
+                      return (
+                      <a 
+                        key={f.id}
+                        href={`#${f.id}`}
+                        className={`transition-all duration-300 font-sans hover:text-[#192553]
+                          ${isActive ? 'text-base font-bold text-[#192553]' : 'text-sm text-[#1279be]'}`}>
                         {f.title}
                       </a>
-                    ))}
+                      );
+                    })}                  
                   </nav>
 
                   <div className="flex-1 min-w-0">
