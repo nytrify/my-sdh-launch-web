@@ -113,32 +113,33 @@ export default function TeacherGuide(){
 
               <div className="relative flex flex-col items-center justify-center text-center bg-white py-10">          
                 <div className="w-1/2 py-8 items-center">
-                  {!isRevealed ? (
-                    <>
-                    <div className="flex flex-col gap-8 items-center">
-                      <h1 className="text-2xl text-base md:text-4xl font-bold font-sans text-[#192553]">Access The Teacher Guideline</h1>
+                  <h1 className="text-2xl text-base md:text-4xl font-bold font-sans text-[#192553]">MySDH Guidelines</h1>
+                  <div className="flex flex-row gap-8 items-center justify-center py-8">                   
+                    <a href="https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/MySDH-Mobile-App.aspx?d=wef7a5e155cba4bfebea0364050ff165c&csf=1&web=1&e=vQMOkg" target="_blank">
+                      <h1
+                        onClick={() => setIsRevealed(true)}
+                        className="w-[180px] text-lg font-bold font-sans rounded-lg border border-[#dde4ed] text-[#192553] transition hover:scale-125 text-center z-10 p-2 cursor-pointer"
+                      >
+                        Mobile Guideline
+                      </h1>
+                    </a>
+                    <a href="https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/MySDH-Website-Admin.aspx?d=w63eeada7c29c4ed9b988a6b2be638d79&csf=1&web=1&e=supi6p" target="_blank">
                       <h1
                         onClick={() => setIsRevealed(true)}
                         className="w-[150px] text-lg font-bold font-sans rounded-lg border border-[#dde4ed] text-[#192553] transition hover:scale-125 text-center z-10 p-2 cursor-pointer"
                       >
-                        Click Here
+                        CMS Guideline
                       </h1>
-                    </div>
-                    </>
-                  ) : (
-                    <div className="z-10 text-center transition-opacity duration-700 ease-in-out opacity-0 animate-[fadeIn_0.6s_ease-in-out_0.3s_forwards]">
-                      <a href="https://ypph.sharepoint.com/sites/EDUTECHSDH-SLH673/SitePages/MySDH-Teacher's-Guide.aspx" target="_blank" rel="noopener noreferrer">
-                        <h2 className="text-xl md:text-4xl font-bold font-sans mb-4 underline text-[#192553]">Teacher Guideline Sharepoint</h2>
-                      </a>
-                      
-                      <button
-                        onClick={() => setIsRevealed(false)}
-                        className="mt-6 font-sans rounded border border-[#192553] px-4 py-2 text-sm text-[#192553] hover:bg-[#dde4ed] hover:text-[#192553] transition"
+                    </a>
+                    <a href="https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/Teacher-Guideline-MySDH.aspx?d=wdcb36a5480f84047bf4578a5865326dc&csf=1&web=1&e=dqb0Hk" target="_blank">
+                      <h1
+                        onClick={() => setIsRevealed(true)}
+                        className="w-[180px] text-lg font-bold font-sans rounded-lg border border-[#dde4ed] text-[#192553] transition hover:scale-125 text-center z-10 p-2 cursor-pointer"
                       >
-                        Back
-                      </button>
-                    </div>
-                  )}
+                        Teacher Guideline
+                      </h1>
+                    </a>                    
+                  </div>
                 </div>    
                 <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
                   <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-[#192553]/30 z-0" />                  
