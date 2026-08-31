@@ -2,15 +2,15 @@ import PhoneFrame from "./PhoneFrame";
 import VideoPlayer from "./VideoPlayer";
 
 export interface Feature {
-  id: string;                          // anchor target, e.g. "#agenda"
+  id: string;                         
   title: string;
-  description: string[];               // one or more paragraphs
+  description: string[];               
   videoSrc: string;
   imageSrc: string;
   imageAlt: string;
-  imagePosition?: 'left' | 'right';    // desktop layout only; mobile always text-first
+  imagePosition?: 'left' | 'right';    
   textAlign?: 'left' | 'center';
-  className?: string;                  // extra spacing per-instance (mt-14, mb-8, etc.)
+  className?: string;               
 }
 
 export default function FeatureCard({ feature }: { feature: Feature }) {
