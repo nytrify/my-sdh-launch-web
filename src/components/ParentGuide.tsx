@@ -212,7 +212,7 @@ export default function ParentGuide(){
           
               <div className="relative bg-white">
                 <div className="flex flex-row gap-6 max-w-7xl mx-auto px-6">
-                  <nav className="hidden lg:flex flex-col gap-3 sticky top-24 self-start h-fit bg-[#f5f6f7] backdrop-blur px-4 py-6 rounded-2xl shadow-lg border border-gray-200 max-w-[180px] shrink-0">
+                  <nav className="hidden lg:flex flex-col gap-3 sticky top-24 self-start h-fit bg-[#f5f6f7] backdrop-blur px-4 py-6 rounded-2xl shadow-lg border border-gray-200 max-w-[180px] shrink-0 my-8">
                     {allFeatures.map((f) => {
                       const isActive = f.id === activeId;
                       return (
