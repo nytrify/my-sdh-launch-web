@@ -5,6 +5,8 @@ import PhoneFrame from "./PhoneFrame";
 import Image from "next/image";
 import { useState } from "react";
 import VideoPlayer from "./VideoPlayer";
+import Link from "next/link";
+import GuidelineCard from "./GuidelineCard";
 
 type FAQItem = {
   question: string
@@ -20,6 +22,27 @@ const teacherFAQs: FAQItem[] = [
   { question: 'Why can\'t parents see my post?', answer: 'This may happen if: 1. The post has not been published. 2. The class has not been assigned correctly. 3. The student\'s parent account has not been linked. 4. There is a temporary synchronization delay. If the issue persists, contact your school\'s administrator.'},
   { question: 'What should I do if I encounter technical issues?', answer: 'Contact your school\'s IT support or administrator. If requested, provide screenshots and a description of the issue to help resolve it more quickly.' },
 ]
+
+const guides = [
+    {
+      title: 'Mobile Guide',
+      imageSrc: '/display-mysdh.png',
+      imageAlt: 'Mobile Guide',
+      href: 'https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/MySDH-Mobile-App.aspx?d=wef7a5e155cba4bfebea0364050ff165c&csf=1&web=1&e=vQMOkg',
+    },
+    {
+      title: 'CMS Guide',
+      imageSrc: '/CMSCard.png',
+      imageAlt: 'CMS Guide',
+      href: 'https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/MySDH-Website-Admin.aspx?d=w63eeada7c29c4ed9b988a6b2be638d79&csf=1&web=1&e=supi6p',
+    },
+    {
+      title: 'Teacher Guide',
+      imageSrc: '/DSC08882.jpg',
+      imageAlt: 'Teacher Guide',
+      href: 'https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/Teacher-Guideline-MySDH.aspx?d=wdcb36a5480f84047bf4578a5865326dc&csf=1&web=1&e=dqb0Hk',
+    },
+  ];
 
 function BgDecor(){
   return (
@@ -112,10 +135,11 @@ export default function TeacherGuide(){
           </section>               
 
               <div className="relative flex flex-col items-center justify-center text-center bg-white py-10">          
-                <div className="w-1/2 py-8 items-center">
+                <div className="w-3/4 py-8 items-center">
                   <h1 className="text-2xl text-base md:text-4xl font-bold font-sans text-[#192553]">MySDH Guidelines</h1>
-                  <div className="flex flex-row gap-8 items-center justify-center py-8">                   
+                  {/* <div className="flex flex-row gap-8 items-center justify-center py-8">                   
                     <a href="https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/MySDH-Mobile-App.aspx?d=wef7a5e155cba4bfebea0364050ff165c&csf=1&web=1&e=vQMOkg" target="_blank">
+
                       <h1
                         onClick={() => setIsRevealed(true)}
                         className="w-[180px] text-lg font-bold font-sans rounded-lg border border-[#dde4ed] text-[#192553] transition hover:scale-125 text-center z-10 p-2 cursor-pointer"
@@ -138,8 +162,13 @@ export default function TeacherGuide(){
                       >
                         Teacher Guideline
                       </h1>
-                    </a>                    
-                  </div>
+                    </a>                      
+                  </div> */}
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-6 justify-center">
+                    {guides.map((guide) => (
+                      <GuidelineCard key={guide.title} {...guide}/>
+                    ))}
+                  </div>                                        
                 </div>    
                 <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
                   <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-[#192553]/30 z-0" />                  
