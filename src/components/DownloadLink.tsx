@@ -10,7 +10,6 @@ export default function DownloadLink() {
       e.preventDefault()
       document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })
     }
-    // if not on '/', let the Link navigate normally — Next handles the hash on arrival
   }
 
   return (

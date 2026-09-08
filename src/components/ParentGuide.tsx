@@ -30,11 +30,6 @@ const parentFAQs: FAQItem[] = [
 function BgDecor(){
   return (
     <div className="absolute inset-0 pointer-events-none">
-      {/* soft glow */}
-      {/* <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-400/30 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px]" /> */}
-      
-      {/* grid overlay */}
       <div 
         className="absolute inset-0 opacity-[0.06]"
         style={{

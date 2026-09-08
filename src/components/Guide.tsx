@@ -62,7 +62,6 @@ export default function Guide() {
             </section>
 
             <section className="relative w-full">
-              {/* <Image src="/DSC09549.JPG" alt="Main Banner" fill className="object-cover" /> */}
               <div className="inset-0 flex flex-col items-center justify-center text-center bg-white">
                 <h1 className="text-5xl font-bold md:text-7xl z-10 font-sans text-[#192553] p-10">Explore the User's Guide</h1>
                 <h1 className="text-base md:text-3xl z-10 font-sans text-[#192553] px-10">A Better Way To Stay Connected</h1>

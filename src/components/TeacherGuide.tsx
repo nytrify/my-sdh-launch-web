@@ -1,11 +1,8 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
-import PhoneFrame from "./PhoneFrame";
 import Image from "next/image";
 import { useState } from "react";
-import VideoPlayer from "./VideoPlayer";
-import Link from "next/link";
 import GuidelineCard from "./GuidelineCard";
 
 type FAQItem = {
@@ -47,11 +44,6 @@ const guides = [
 function BgDecor(){
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* soft glow
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-400/30 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px]" /> */}
-      
-      {/* grid overlay */}
       <div 
         className="absolute inset-0 opacity-[0.06]"
         style={{
@@ -137,33 +129,6 @@ export default function TeacherGuide(){
               <div className="relative flex flex-col items-center justify-center text-center bg-white py-10">          
                 <div className="w-3/4 py-8 items-center">
                   <h1 className="text-2xl text-base md:text-4xl font-bold font-sans text-[#192553]">MySDH Guidelines</h1>
-                  {/* <div className="flex flex-row gap-8 items-center justify-center py-8">                   
-                    <a href="https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/MySDH-Mobile-App.aspx?d=wef7a5e155cba4bfebea0364050ff165c&csf=1&web=1&e=vQMOkg" target="_blank">
-
-                      <h1
-                        onClick={() => setIsRevealed(true)}
-                        className="w-[180px] text-lg font-bold font-sans rounded-lg border border-[#dde4ed] text-[#192553] transition hover:scale-125 text-center z-10 p-2 cursor-pointer"
-                      >
-                        Mobile Guideline
-                      </h1>
-                    </a>
-                    <a href="https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/MySDH-Website-Admin.aspx?d=w63eeada7c29c4ed9b988a6b2be638d79&csf=1&web=1&e=supi6p" target="_blank">
-                      <h1
-                        onClick={() => setIsRevealed(true)}
-                        className="w-[150px] text-lg font-bold font-sans rounded-lg border border-[#dde4ed] text-[#192553] transition hover:scale-125 text-center z-10 p-2 cursor-pointer"
-                      >
-                        CMS Guideline
-                      </h1>
-                    </a>
-                    <a href="https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/Teacher-Guideline-MySDH.aspx?d=wdcb36a5480f84047bf4578a5865326dc&csf=1&web=1&e=dqb0Hk" target="_blank">
-                      <h1
-                        onClick={() => setIsRevealed(true)}
-                        className="w-[180px] text-lg font-bold font-sans rounded-lg border border-[#dde4ed] text-[#192553] transition hover:scale-125 text-center z-10 p-2 cursor-pointer"
-                      >
-                        Teacher Guideline
-                      </h1>
-                    </a>                      
-                  </div> */}
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-6 justify-center">
                     {guides.map((guide) => (
                       <GuidelineCard key={guide.title} {...guide}/>

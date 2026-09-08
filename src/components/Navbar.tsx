@@ -18,12 +18,10 @@ export default function Navbar() {
       e.preventDefault()
       document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })
     }
-    // if not on '/', let the Link navigate normally — Next handles the hash on arrival
   }
 
   return (
     <>
-      {/* <header className={"fixed top-0 left-0 right-0 z-50 bg-[#FFFFED]/60 inset-shadow-black py-5 backdrop-blur-md shadow-lg/20"}> */}
       <header className={"fixed top-0 left-0 right-0 z-50 bg-white py-5 shadow-lg/20"}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <a href="/" className="flex items-center group">
@@ -36,7 +34,6 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Desktop Navbar Links*/}
           <nav className="hidden md:flex items-center space-x-8">
             <a
               key="Home"
@@ -58,7 +55,6 @@ export default function Navbar() {
             <DownloadLink />
           </nav>
 
-           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-brand-blue-dark hover:text-brand-blue transition-colors focus:outline-none"
@@ -68,7 +64,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu Panel */}
         <AnimatePresence>
           {isOpen && (
             <motion.div

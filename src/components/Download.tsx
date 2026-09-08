@@ -71,21 +71,7 @@ export default function Download(){
                     </a>
                   </div>
                 </div>
-                {/* <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 flex justify-center items-center w-3/4">
-                    <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-[#192553]/30 z-0" />      
-                    <h2 className="text-lg uppercase tracking-wider text-[#192553] whitespace-nowrap font-sans bg-[#dde4ed] px-4 py-1 rounded-lg shadow font-bold z-10">
-                      Frequently Asked Questions
-                    </h2>
-                </div>   */}
                </div>
-                {/* <div className="relative flex flex-col items-center justify-center text-center h-max py-15 bg-white">
-                  <div className="flex w-full w-full mt-12 pb-6 justify-center">
-                    <div className="w-1/2 text-center z-10 text-black">
-                      <FAQAccordion items={footerFAQS} />
-                    </div>
-                  </div>
-                </div>        */}
-
             </section>
 
         </>
