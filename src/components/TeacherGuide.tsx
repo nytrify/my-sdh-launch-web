@@ -34,9 +34,9 @@ const guides = [
       href: 'https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/MySDH-Website-Admin.aspx?d=w63eeada7c29c4ed9b988a6b2be638d79&csf=1&web=1&e=supi6p',
     },
     {
-      title: 'Teacher Guide',
+      title: 'Implementation Guide',
       imageSrc: '/DSC08882.jpg',
-      imageAlt: 'Teacher Guide',
+      imageAlt: 'Implementation Guide',
       href: 'https://ypph.sharepoint.com/:u:/r/sites/SDHLeaders/SitePages/Teacher-Guideline-MySDH.aspx?d=wdcb36a5480f84047bf4578a5865326dc&csf=1&web=1&e=dqb0Hk',
     },
   ];
