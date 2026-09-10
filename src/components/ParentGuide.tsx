@@ -112,17 +112,6 @@ export default function ParentGuide(){
         imageSrc: '/dashboard.png',
         imageAlt: 'Dashboard Screen',
       },
-      {
-        id: 'academic-menu',
-        title: 'Academic Menu',
-        description: [
-          'Learn to access the academic features, Student Agenda and Student Updates, within the application',
-        ],
-        videoSrc: '/sdh-logo-vid.mp4',
-        imageSrc: '/academic-center.jpeg',
-        imageAlt: 'Academic Menu Screen',
-        className: 'mb-8',
-      },
     ];
 
     const parentsFeatures: Feature[] = [
