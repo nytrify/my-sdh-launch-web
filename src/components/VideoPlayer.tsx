@@ -10,16 +10,9 @@ const Plyr = dynamic(
 
 export default function VideoPlayer({src}: {src: string}) {
   return (
-    <Plyr
-      source={{
-        type: "video",
-        sources: [
-          {
-            src: src,
-            type: "video/mp4",
-          },
-        ],
-      }}
-    />
+    <video controls className="w-full rounded-lg" playsInline>
+      <source src={src} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   );
 }
