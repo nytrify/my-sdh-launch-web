@@ -94,7 +94,7 @@ export default function ParentGuide(){
         videoSrc: '/parent-guide-videos/SignIn.mp4',
         imageSrc: '/signin.png',
         imageAlt: 'Sign in Screen',
-        className: 'mt-14',
+        className: '',
       },
       {
         id: 'forgot-password',
@@ -111,6 +111,7 @@ export default function ParentGuide(){
         videoSrc: '/parent-guide-videos/Dashboard.mp4',
         imageSrc: '/dashboard.png',
         imageAlt: 'Dashboard Screen',
+        className: 'mb-8'
       },
     ];
 
